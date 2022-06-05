@@ -41,32 +41,39 @@ class SplashViewController: UIViewController {
     @objc func playerDidFinishPlaying(note: NSNotification) {
         print("Method , video is finished ")
         playerController.view.removeFromSuperview()
-//        self.goToRootOrHomePage()
+        self.goToLoginOrHomePage()
     }
     
-    private func goToRootOrHomePage() {
+    private func goToLoginOrHomePage() {
         if alreadySplashShowed {
             return
         }
         alreadySplashShowed = true
         
-        let authenticatedUser = UserDefaults.standard.string(forKey: "userId")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if((authenticatedUser) != nil){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeVC")
-            let navController =  UINavigationController.init(rootViewController: homeVC)
-            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-            appDelegate.window?.rootViewController = navController
-            appDelegate.window?.makeKeyAndVisible()
-        }
-        else{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "rootVC")
-            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-            appDelegate.window?.rootViewController = vc
-            appDelegate.window?.makeKeyAndVisible()
-        }
+//        let authenticatedUser = UserDefaults.standard.string(forKey: "userId")
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
+        homeVC.modalPresentationStyle = .fullScreen
+        self.present(homeVC, animated: true, completion: nil)
+
+        
+//        if((authenticatedUser) != nil){
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeVC")
+//            let navController =  UINavigationController.init(rootViewController: homeVC)
+//            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+//            appDelegate.window?.rootViewController = navController
+//            appDelegate.window?.makeKeyAndVisible()
+//        }
+//        else{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "rootVC")
+//            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+//            appDelegate.window?.rootViewController = vc
+//            appDelegate.window?.makeKeyAndVisible()
+//        }
     }
         
     

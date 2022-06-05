@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C2562284CD28F009F8ADB /* HomeViewController.swift */; };
 		2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C17284CA60C00982455 /* AppDelegate.swift */; };
 		2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C19284CA60C00982455 /* SceneDelegate.swift */; };
 		2D972C1F284CA60C00982455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C1D284CA60C00982455 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1C2562284CD28F009F8ADB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D972C14284CA60C00982455 /* NFTSea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTSea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D972C17284CA60C00982455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D972C19284CA60C00982455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1C255F284CD106009F8ADB /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				2D1C2562284CD28F009F8ADB /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		2D972C0B284CA60C00982455 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		2D972C2B284CB5EA00982455 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2D1C255F284CD106009F8ADB /* HomePage */,
 				2D972C2C284CB5F500982455 /* Splash */,
 			);
 			path = Pages;
@@ -177,6 +188,7 @@
 				2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */,
 				2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
+				2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
