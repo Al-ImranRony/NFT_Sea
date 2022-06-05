@@ -10,11 +10,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    override init() {
+//        FirebaseApp.configure()
+        
+        //Splash Screen Video
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let splashVC = storyboard.instantiateViewController(withIdentifier: "splashVC")
+//        let navController =  UINavigationController.init(rootViewController: splashVC)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = splashVC
+        self.window?.makeKeyAndVisible()
     }
 
     // MARK: UISceneSession Lifecycle

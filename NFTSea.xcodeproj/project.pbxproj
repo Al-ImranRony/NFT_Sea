@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C17284CA60C00982455 /* AppDelegate.swift */; };
 		2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C19284CA60C00982455 /* SceneDelegate.swift */; };
-		2D972C1C284CA60C00982455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C1B284CA60C00982455 /* ViewController.swift */; };
 		2D972C1F284CA60C00982455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C1D284CA60C00982455 /* Main.storyboard */; };
 		2D972C21284CA60D00982455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C20284CA60D00982455 /* Assets.xcassets */; };
 		2D972C24284CA60D00982455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C22284CA60D00982455 /* LaunchScreen.storyboard */; };
+		2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C2D284CB60A00982455 /* SplashViewController.swift */; };
+		2D972C37284CC0B800982455 /* splashVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C34284CC08200982455 /* splashVideo.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D972C14284CA60C00982455 /* NFTSea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTSea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D972C17284CA60C00982455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D972C19284CA60C00982455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D972C1B284CA60C00982455 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D972C1E284CA60C00982455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D972C20284CA60D00982455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D972C23284CA60D00982455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D972C25284CA60D00982455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D972C2D284CB60A00982455 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2D972C34284CC08200982455 /* splashVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		2D972C16284CA60C00982455 /* NFTSea */ = {
 			isa = PBXGroup;
 			children = (
+				2D972C2B284CB5EA00982455 /* Pages */,
+				2D972C35284CC09900982455 /* Utilities */,
 				2D972C17284CA60C00982455 /* AppDelegate.swift */,
 				2D972C19284CA60C00982455 /* SceneDelegate.swift */,
-				2D972C1B284CA60C00982455 /* ViewController.swift */,
 				2D972C1D284CA60C00982455 /* Main.storyboard */,
 				2D972C20284CA60D00982455 /* Assets.xcassets */,
 				2D972C22284CA60D00982455 /* LaunchScreen.storyboard */,
 				2D972C25284CA60D00982455 /* Info.plist */,
 			);
 			path = NFTSea;
+			sourceTree = "<group>";
+		};
+		2D972C2B284CB5EA00982455 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				2D972C2C284CB5F500982455 /* Splash */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		2D972C2C284CB5F500982455 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				2D972C2D284CB60A00982455 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		2D972C35284CC09900982455 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2D972C36284CC0A500982455 /* Videos */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2D972C36284CC0A500982455 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				2D972C34284CC08200982455 /* splashVideo.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D972C37284CC0B800982455 /* splashVideo.mp4 in Resources */,
 				2D972C24284CA60D00982455 /* LaunchScreen.storyboard in Resources */,
 				2D972C21284CA60D00982455 /* Assets.xcassets in Resources */,
 				2D972C1F284CA60C00982455 /* Main.storyboard in Resources */,
@@ -138,9 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D972C1C284CA60C00982455 /* ViewController.swift in Sources */,
 				2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */,
 				2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */,
+				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +329,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTSea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,7 +357,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTSea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
