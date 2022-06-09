@@ -53,10 +53,11 @@ class SplashViewController: UIViewController {
 //        let authenticatedUser = UserDefaults.standard.string(forKey: "userId")
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
-        homeVC.modalPresentationStyle = .fullScreen
-        self.present(homeVC, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
+        let homeTabBarController = HomeTabBarViewController()
+        homeTabBarController.modalPresentationStyle = .fullScreen
+        self.present(homeTabBarController, animated: true, completion: nil)
 
         
 //        if((authenticatedUser) != nil){

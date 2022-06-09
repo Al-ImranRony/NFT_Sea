@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="289" height="217"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-2C-nxV">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-2C-nxV">
                         <rect key="frame" x="6" y="6" width="277" height="110"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="110" id="Olq-Sy-yt1"/>

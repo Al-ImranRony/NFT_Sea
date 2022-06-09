@@ -19,26 +19,11 @@ class TrendingCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "TrendingCollectionViewCell", bundle: nil)
     }
-    
-//    let profileImageView: UIImageView = {
-//        let imgView = UIImageView()
-//        imgView.backgroundColor = .red
-//        imgView.layer.cornerRadius = imgView.layer.frame.width / 2
-//        imgView.clipsToBounds = true
-//        return imgView
-//    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        collectionDPImageView.layer.cornerRadius = collectionDPImageView.frame.size.width / 2;
-//        collectionDPImageView.clipsToBounds = true
-//        collectionDPImageView.layer.borderWidth = 3;
-//        collectionDPImageView.layer.borderColor = [UIColor .white] as! CGColor
-//        collectionDPImageView.frame.size.width = 52
-//        collectionDPImageView.frame.size.height = 52
         
-        
-//        collectionDPImageView.translatesAutoresizingMaskIntoConstraints = false
+       setupFloatingDP()
     }
     
     public func configure(with model: Model) {
@@ -48,14 +33,45 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         self.priceTagLabel.text = model.priceTag
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setFloatingDPFrame()
+    }
     
     func handleConstraints() {
         
     }
     
+    private func setFloatingDPFrame() {
+        var createButtonFrame = collectionDPImageView.frame
+        createButtonFrame.origin.y = 0 - getFlotedPartHeight()
+        createButtonFrame.origin.x = (self.bounds.width / 2) - (collectionDPImageView.frame.width / 2)
+        collectionDPImageView.frame = createButtonFrame
+        
+        collectionDPImageView.layer.cornerRadius = collectionDPImageView.frame.size.width / 2;
+        let borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+        collectionDPImageView.layer.borderWidth = 3;
+        collectionDPImageView.layer.borderColor = borderColor.cgColor
+    }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func getFlotedPartHeight() ->  CGFloat {
+        return -14
+    }
+    
+    private func setupFloatingDP() {
+        let dpSize = getfloatingDPSize()
+        let dpSizeWidth = dpSize.width
+        let dpSizeHeight = dpSize.height
+        collectionDPImageView.frame = CGRect(x: 0, y: 0, width: dpSizeWidth, height: dpSizeHeight)
+        setFloatingDPFrame()
+        addSubview(collectionDPImageView)
+//        collectionDPImageView.image =
+        layoutIfNeeded()
+    }
+    
+    private func getfloatingDPSize() -> CGSize {
+        return CGSize(width: 52, height: 52)
     }
 
 }

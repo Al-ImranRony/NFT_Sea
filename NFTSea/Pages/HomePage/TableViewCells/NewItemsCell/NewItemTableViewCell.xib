@@ -22,20 +22,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Pb-gx-y5Y">
-                        <rect key="frame" x="36" y="11" width="465" height="40"/>
+                        <rect key="frame" x="20" y="11" width="481" height="40"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IdV-aZ-jnG">
-                                <rect key="frame" x="0.0" y="0.0" width="142" height="18"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="IdV-aZ-jnG">
+                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Items" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1m-5u-igD">
-                                        <rect key="frame" x="0.0" y="0.0" width="118" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="18"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flash 1" translatesAutoresizingMaskIntoConstraints="NO" id="S9f-Hj-frJ">
-                                        <rect key="frame" x="122" y="-2" width="20" height="20"/>
+                                        <rect key="frame" x="98.5" y="-2" width="20" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Sqo-R9-aVu"/>
@@ -46,11 +46,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Cdb-54-Z6G"/>
-                                    <constraint firstAttribute="width" constant="142" id="c43-l1-TOn"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmk-or-5ua">
-                                <rect key="frame" x="405" y="0.0" width="60" height="24"/>
+                                <rect key="frame" x="421" y="0.0" width="60" height="24"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.14117647059999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="iQl-8L-CfS"/>
@@ -87,13 +86,14 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0mZ-jd-nbq" secondAttribute="trailing" id="1KS-f4-Crj"/>
                     <constraint firstItem="0mZ-jd-nbq" firstAttribute="top" secondItem="6Pb-gx-y5Y" secondAttribute="bottom" id="K87-85-EED"/>
                     <constraint firstItem="0mZ-jd-nbq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NRP-SW-zDw"/>
                     <constraint firstItem="6Pb-gx-y5Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="PbS-1Y-BAN"/>
                     <constraint firstAttribute="bottom" secondItem="0mZ-jd-nbq" secondAttribute="bottom" id="S4d-SB-gqz"/>
-                    <constraint firstItem="6Pb-gx-y5Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="VQ4-sj-hwL"/>
+                    <constraint firstItem="6Pb-gx-y5Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VQ4-sj-hwL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="6Pb-gx-y5Y" secondAttribute="trailing" id="Vle-A4-als"/>
                 </constraints>
             </tableViewCellContentView>

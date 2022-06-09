@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -40,9 +40,9 @@ class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
     }
     
     override func layoutSubviews() {
-          super.layoutSubviews()
-          let bottomSpace: CGFloat = 10.0 // Let's assume the space you want is 10
-          self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom:bottomSpace, right: 0))
+        super.layoutSubviews()
+        let bottomSpace: CGFloat = 10.0 // Let's assume the space you want is 10
+        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom:bottomSpace, right: 0))
      }
     
     

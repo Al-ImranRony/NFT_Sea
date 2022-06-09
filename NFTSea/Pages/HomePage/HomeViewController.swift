@@ -35,21 +35,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         super.viewDidLoad()
         
         //UI - Search Bar portion
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.init(rawValue: 700.0))
-        
-        searchBar.delegate = self
-        searchBar.isTranslucent = false
-        searchBar.placeholder = " Collection, item or user"
-        searchBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
-
-        let forTextField = searchBar.value(forKey: "searchField") as? UITextField
-        forTextField?.borderStyle = .none
-        forTextField?.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
-        forTextField?.font = UIFont(name: "SourceSansPro-Regular", size: 15)
-        forTextField?.clipsToBounds = true
-        forTextField?.layer.cornerRadius = 18
-        forTextField?.layer.borderColor = CGColor(red: 135/255, green: 123/255, blue: 183/255, alpha: 1.0)
-        forTextField?.layer.borderWidth = 0.5
+        searchBarSetup()
         
         //TableView
         table.register(AssetTableViewCell.nib(), forCellReuseIdentifier: AssetTableViewCell.identifier)
@@ -60,13 +46,37 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         table.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
         
-        assetModel.append(Model(itemName: "Flash", itemImageName: "flash 2", categoryName: "", priceTag: ""))
-        assetModel.append(Model(itemName: "Menu", itemImageName: "menuIcon", categoryName: "", priceTag: ""))
-        assetModel.append(Model(itemName: "Search", itemImageName: "search", categoryName: "", priceTag: ""))
-        assetModel.append(Model(itemName: "Menu", itemImageName: "menuIcon", categoryName: "", priceTag: ""))
+        configureModel()
     }
     
-    //TableView
+    public func searchBarSetup() {
+        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.init(rawValue: 700.0))
+        
+        searchBar.delegate = self
+        searchBar.isTranslucent = false
+        searchBar.placeholder = " Collection, item or user"
+        searchBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
+        searchBar.setPositionAdjustment(UIOffset(horizontal: 7, vertical: 0), for: .search)
+
+        let forTextField = searchBar.value(forKey: "searchField") as? UITextField
+        forTextField?.borderStyle = .none
+        forTextField?.textColor = UIColor(red: 178/255, green: 181/255, blue: 185/255, alpha: 1.0)
+        forTextField?.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
+        forTextField?.font = UIFont(name: "SourceSansPro-Regular", size: 15)
+        forTextField?.clipsToBounds = true
+        forTextField?.layer.cornerRadius = 18
+        forTextField?.layer.borderColor = CGColor(red: 135/255, green: 123/255, blue: 183/255, alpha: 1.0)
+        forTextField?.layer.borderWidth = 0.5
+    }
+    
+    func configureModel() {
+        assetModel.append(Model(itemName: "asset1", itemImageName: "asset1", categoryName: "Collection1", priceTag: "0.8ETH"))
+        assetModel.append(Model(itemName: "asset2", itemImageName: "asset2", categoryName: "Collection1", priceTag: "0.32987ETH"))
+        assetModel.append(Model(itemName: "asset3", itemImageName: "asset3", categoryName: "Collection1", priceTag: "0.893276ETH"))
+        assetModel.append(Model(itemName: "asset4", itemImageName: "asset4", categoryName: "Collection1", priceTag: "0.92374ETH"))
+    }
+    
+    //TableView ddf functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -89,9 +99,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.row == 0) {
+        if (indexPath.section == 0) {
             return 180.0  //20(top)+ 110(img) + 8(padding) + 12(label) + 30(Bottom)
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.section == 1) {
             return 200.0
         } else {
             return 272.0
@@ -106,8 +116,5 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         3
     }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return tableCellSpacingHeight
-//    }
-    
 }
+

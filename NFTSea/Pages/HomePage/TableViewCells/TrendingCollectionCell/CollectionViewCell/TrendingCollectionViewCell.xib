@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.14117647058823529" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k8o-mE-ao3" firstAttribute="centerX" secondItem="3DL-No-9ud" secondAttribute="centerX" id="7Ji-9v-Do0"/>
                             <constraint firstAttribute="bottom" secondItem="k8o-mE-ao3" secondAttribute="bottom" constant="14" id="BLi-yz-2g3"/>
@@ -57,7 +57,7 @@
                             <constraint firstItem="k8o-mE-ao3" firstAttribute="top" secondItem="2yq-BX-QMd" secondAttribute="bottom" constant="5" id="ysw-ZC-mzf"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-iJ-UKp">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-iJ-UKp">
                         <rect key="frame" x="107" y="45" width="52" height="27.5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>

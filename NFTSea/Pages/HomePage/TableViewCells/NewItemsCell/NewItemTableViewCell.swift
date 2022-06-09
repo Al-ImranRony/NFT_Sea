@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     @IBOutlet weak var newItemCollectionView: UICollectionView!
@@ -51,9 +51,9 @@ class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         return collectionCell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
-//        return CGSize(width: 160, height: 200)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
+        return CGSize(width: 160, height: 200)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0

@@ -29,7 +29,6 @@ class NewItemCollectionViewCell: UICollectionViewCell {
     
     public func configure(with model: Model) {
         self.itemImageView.image = UIImage(named: model.itemImageName)
-        self.itemImageView.layer.cornerRadius = 4
         self.itemNameLabel.text = model.itemName
         self.priceTagLabel.text = "0.002ETH"
 //        self.ownerNameLabel.text = model.categoryName

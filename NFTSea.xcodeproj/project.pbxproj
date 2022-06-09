@@ -29,6 +29,13 @@
 		2DAF31A1284E3A4F00FE8C81 /* AssetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAF319F284E3A4F00FE8C81 /* AssetTableViewCell.xib */; };
 		2DAF31A4284E3A7F00FE8C81 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF31A2284E3A7F00FE8C81 /* AssetCollectionViewCell.swift */; };
 		2DAF31A5284E3A7F00FE8C81 /* AssetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAF31A3284E3A7F00FE8C81 /* AssetCollectionViewCell.xib */; };
+		2DE585592850BA04009147D8 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585582850BA04009147D8 /* HomeTabBarViewController.swift */; };
+		2DE5855B2850C186009147D8 /* CreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE5855A2850C186009147D8 /* CreateTabBar.swift */; };
+		2DE5855D2850C5F1009147D8 /* MYNFTsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE5855C2850C5F1009147D8 /* MYNFTsViewController.swift */; };
+		2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE5855E2850C836009147D8 /* ThirdTab.swift */; };
+		2DE585612850C99C009147D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585602850C99C009147D8 /* Profile.swift */; };
+		2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585622850CB34009147D8 /* CreateNFTViewController.swift */; };
+		2DE585652850CF5F009147D8 /* HomePageTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585642850CF5F009147D8 /* HomePageTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,13 @@
 		2DAF319F284E3A4F00FE8C81 /* AssetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetTableViewCell.xib; sourceTree = "<group>"; };
 		2DAF31A2284E3A7F00FE8C81 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DAF31A3284E3A7F00FE8C81 /* AssetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetCollectionViewCell.xib; sourceTree = "<group>"; };
+		2DE585582850BA04009147D8 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		2DE5855A2850C186009147D8 /* CreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTabBar.swift; sourceTree = "<group>"; };
+		2DE5855C2850C5F1009147D8 /* MYNFTsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYNFTsViewController.swift; sourceTree = "<group>"; };
+		2DE5855E2850C836009147D8 /* ThirdTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTab.swift; sourceTree = "<group>"; };
+		2DE585602850C99C009147D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2DE585622850CB34009147D8 /* CreateNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNFTViewController.swift; sourceTree = "<group>"; };
+		2DE585642850CF5F009147D8 /* HomePageTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,7 @@
 		2D1C255F284CD106009F8ADB /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				2DE585572850B1B5009147D8 /* TabBar */,
 				2DAF3194284E37F600FE8C81 /* TableViewCells */,
 				2D1C2562284CD28F009F8ADB /* HomeViewController.swift */,
 			);
@@ -148,11 +163,15 @@
 				2D972C2B284CB5EA00982455 /* Pages */,
 				2D972C35284CC09900982455 /* Utilities */,
 				2D972C17284CA60C00982455 /* AppDelegate.swift */,
+				2DE5855C2850C5F1009147D8 /* MYNFTsViewController.swift */,
+				2DE5855E2850C836009147D8 /* ThirdTab.swift */,
+				2DE585602850C99C009147D8 /* Profile.swift */,
 				2D972C19284CA60C00982455 /* SceneDelegate.swift */,
 				2D972C1D284CA60C00982455 /* Main.storyboard */,
 				2D972C20284CA60D00982455 /* Assets.xcassets */,
 				2D972C22284CA60D00982455 /* LaunchScreen.storyboard */,
 				2D972C25284CA60D00982455 /* Info.plist */,
+				2DE585622850CB34009147D8 /* CreateNFTViewController.swift */,
 			);
 			path = NFTSea;
 			sourceTree = "<group>";
@@ -217,6 +236,16 @@
 				2DAF31A3284E3A7F00FE8C81 /* AssetCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2DE585572850B1B5009147D8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2DE585582850BA04009147D8 /* HomeTabBarViewController.swift */,
+				2DE5855A2850C186009147D8 /* CreateTabBar.swift */,
+				2DE585642850CF5F009147D8 /* HomePageTabBar.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE585592850BA04009147D8 /* HomeTabBarViewController.swift in Sources */,
+				2DE585652850CF5F009147D8 /* HomePageTabBar.swift in Sources */,
+				2DE585612850C99C009147D8 /* Profile.swift in Sources */,
 				2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */,
+				2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */,
 				2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */,
 				2D2C3B4D284F5DF700F16CF5 /* NewItemCollectionViewCell.swift in Sources */,
 				2D2C3B48284F5DBE00F16CF5 /* TrendingCollectionViewCell.swift in Sources */,
@@ -307,6 +340,9 @@
 				2D2C3B43284F5D7400F16CF5 /* TrendingTableViewCell.swift in Sources */,
 				2DAF31A4284E3A7F00FE8C81 /* AssetCollectionViewCell.swift in Sources */,
 				2D2C3B51284F5E1800F16CF5 /* NewItemTableViewCell.swift in Sources */,
+				2DE5855B2850C186009147D8 /* CreateTabBar.swift in Sources */,
+				2DE5855D2850C5F1009147D8 /* MYNFTsViewController.swift in Sources */,
+				2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
 				2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */,
 			);

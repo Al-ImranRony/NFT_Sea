@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var trendingCollectionView: UICollectionView!
     
@@ -50,9 +50,9 @@ class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         return collectionCell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
-//        return CGSize(width: 160, height: 130)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
+        return CGSize(width: 160, height: 130)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0

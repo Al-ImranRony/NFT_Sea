@@ -26,6 +26,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
     public func configure(with model: Model) {
         self.assetLabel.text = model.itemName
         self.assetImageView.image = UIImage(named: model.itemImageName)
+        self.assetImageView.layer.cornerRadius = 6
     }
 
 }
