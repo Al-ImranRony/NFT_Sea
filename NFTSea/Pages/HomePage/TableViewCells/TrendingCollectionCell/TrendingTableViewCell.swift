@@ -8,7 +8,8 @@
 import UIKit
 
 class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    //TODO: remove btn
+    @IBOutlet weak var seeAllButton: UIButton!
     @IBOutlet weak var trendingCollectionView: UICollectionView!
     
     var trendingCollectionModel = [Model]()
@@ -19,9 +20,11 @@ class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         return UINib(nibName: "TrendingTableViewCell", bundle: nil)
     }
     
+    
     func configure(with model: [Model]) {
         self.trendingCollectionModel = model
         trendingCollectionView.reloadData()
+//        seeAllButton.titleLabel?.font = UIFont(name: "SourceSansPro-Regular", size: 12)
     }
     
     
@@ -38,6 +41,10 @@ class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         // Configure the view for the selected state
     }
     
+    @IBAction func didPressRightIndicator(_ sender: Any) {
+        print("Hot collections will be shown...")
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trendingCollectionModel.count
@@ -48,6 +55,11 @@ class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         collectionCell.configure(with: trendingCollectionModel[indexPath.row])
         collectionCell.layer.cornerRadius = 6
         return collectionCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Name: ", trendingCollectionModel[indexPath.row].itemName)
+        print("Price: ", trendingCollectionModel[indexPath.row].priceTag)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {

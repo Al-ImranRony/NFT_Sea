@@ -49,24 +49,62 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         configureModel()
     }
     
+    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+
+//        for subView in searchBar.subviews {
+//            for subSubView in subView.subviews {
+//                if let textField = subSubView as? UITextField {
+//                    var bounds: CGRect
+//                    bounds = textField.bounds
+//                    bounds.size.height = 40
+//                    textField.bounds = bounds
+//                    searchBar.layoutIfNeeded()
+//                    searchBar.layoutSubviews()
+//                }
+//            }
+//        }
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        print("Menu dekhba ? Wait...")
+    }
+
     public func searchBarSetup() {
+        //TODO: font and weight for custom
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.init(rawValue: 700.0))
         
         searchBar.delegate = self
         searchBar.isTranslucent = false
-        searchBar.placeholder = " Collection, item or user"
+        searchBar.placeholder = "Collection, item or user"
         searchBar.setImage(UIImage(named: "search"), for: .search, state: .normal)
         searchBar.setPositionAdjustment(UIOffset(horizontal: 7, vertical: 0), for: .search)
-
+        //SearchBar textField BG as a color image
+        let searchTextFieldBGColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
+        let image = getImageWithColor(color: searchTextFieldBGColor, size: CGSize(width: searchBar.bounds.width, height: 44))
+        searchBar.setSearchFieldBackgroundImage(image, for: .normal)
         let forTextField = searchBar.value(forKey: "searchField") as? UITextField
         forTextField?.borderStyle = .none
+        var bounds: CGRect
+        bounds = forTextField!.frame
+        bounds.size.height = 44
+        forTextField?.bounds = bounds
         forTextField?.textColor = UIColor(red: 178/255, green: 181/255, blue: 185/255, alpha: 1.0)
-        forTextField?.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
         forTextField?.font = UIFont(name: "SourceSansPro-Regular", size: 15)
         forTextField?.clipsToBounds = true
-        forTextField?.layer.cornerRadius = 18
+        forTextField?.layer.cornerRadius = 22
         forTextField?.layer.borderColor = CGColor(red: 135/255, green: 123/255, blue: 183/255, alpha: 1.0)
         forTextField?.layer.borderWidth = 0.5
+    }
+    
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        var rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
     
     func configureModel() {
@@ -77,6 +115,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     //TableView ddf functions
+    //TODO: accordance to row...
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -86,13 +125,18 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         if (indexPath.section == 0) {
             let tableCell = table.dequeueReusableCell(withIdentifier: AssetTableViewCell.identifier, for: indexPath) as! AssetTableViewCell
             tableCell.configure(with: assetModel)
+            tableCell.selectionStyle = .none
             return tableCell
+            
         } else if (indexPath.section == 1) {
             let tableCell = table.dequeueReusableCell(withIdentifier: TrendingTableViewCell.identifier, for: indexPath) as! TrendingTableViewCell
             tableCell.configure(with: assetModel)
+            tableCell.selectionStyle = .none
             return tableCell
+            
         } else {
             let tableCell = table.dequeueReusableCell(withIdentifier: NewItemTableViewCell.identifier, for: indexPath) as! NewItemTableViewCell
+            tableCell.selectionStyle = .none
             tableCell.configure(with: assetModel)
             return tableCell
         }
@@ -116,5 +160,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         3
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if (indexPath.section == 0) {
+            return nil
+        }
+        return indexPath
+    }
+    
+//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
 }
 

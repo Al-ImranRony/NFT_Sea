@@ -28,5 +28,9 @@ class AssetCollectionViewCell: UICollectionViewCell {
         self.assetImageView.image = UIImage(named: model.itemImageName)
         self.assetImageView.layer.cornerRadius = 6
     }
+    
+    public func fetchDataCollection() {
+        print("Name: ", assetLabel.text)
+    }
 
 }

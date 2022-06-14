@@ -48,41 +48,46 @@
                                     <constraint firstAttribute="height" constant="18" id="Cdb-54-Z6G"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmk-or-5ua">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsL-hS-sBH">
                                 <rect key="frame" x="421" y="0.0" width="60" height="24"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.14117647059999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.14117647058823529" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="iQl-8L-CfS"/>
-                                    <constraint firstAttribute="height" constant="24" id="sW4-IZ-Anh"/>
+                                    <constraint firstAttribute="height" constant="24" id="dWZ-IC-zlo"/>
+                                    <constraint firstAttribute="width" constant="60" id="h6w-DF-FoK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
-                                <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="See All">
+                                    <fontDescription key="titleFontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                            </label>
+                                <connections>
+                                    <action selector="didPressRightIndicator:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iVw-7o-Md3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dmk-or-5ua" firstAttribute="top" secondItem="6Pb-gx-y5Y" secondAttribute="top" id="B8e-ls-rIc"/>
-                            <constraint firstAttribute="trailing" secondItem="dmk-or-5ua" secondAttribute="trailing" id="IsP-pv-6cu"/>
+                            <constraint firstAttribute="trailing" secondItem="OsL-hS-sBH" secondAttribute="trailing" id="9d7-aL-E45"/>
+                            <constraint firstItem="OsL-hS-sBH" firstAttribute="top" secondItem="6Pb-gx-y5Y" secondAttribute="top" id="H9v-Ha-WyQ"/>
                             <constraint firstItem="IdV-aZ-jnG" firstAttribute="top" secondItem="6Pb-gx-y5Y" secondAttribute="top" id="MVF-HN-fbQ"/>
                             <constraint firstAttribute="height" constant="40" id="dhA-7N-3bG"/>
                             <constraint firstItem="IdV-aZ-jnG" firstAttribute="leading" secondItem="6Pb-gx-y5Y" secondAttribute="leading" id="dmV-VO-DeK"/>
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0mZ-jd-nbq">
-                        <rect key="frame" x="16" y="51" width="505" height="157"/>
+                        <rect key="frame" x="0.0" y="51" width="521" height="157"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VRq-GH-UBO">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
@@ -90,7 +95,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0mZ-jd-nbq" secondAttribute="trailing" id="1KS-f4-Crj"/>
                     <constraint firstItem="0mZ-jd-nbq" firstAttribute="top" secondItem="6Pb-gx-y5Y" secondAttribute="bottom" id="K87-85-EED"/>
-                    <constraint firstItem="0mZ-jd-nbq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NRP-SW-zDw"/>
+                    <constraint firstItem="0mZ-jd-nbq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NRP-SW-zDw"/>
                     <constraint firstItem="6Pb-gx-y5Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="PbS-1Y-BAN"/>
                     <constraint firstAttribute="bottom" secondItem="0mZ-jd-nbq" secondAttribute="bottom" id="S4d-SB-gqz"/>
                     <constraint firstItem="6Pb-gx-y5Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VQ4-sj-hwL"/>
@@ -100,6 +105,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="newItemCollectionView" destination="0mZ-jd-nbq" id="WCr-Ze-k3c"/>
+                <outlet property="seeAllButton" destination="OsL-hS-sBH" id="PwF-aV-sIo"/>
             </connections>
             <point key="canvasLocation" x="154.34782608695653" y="43.526785714285715"/>
         </tableViewCell>

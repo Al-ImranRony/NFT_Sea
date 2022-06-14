@@ -8,9 +8,9 @@
 import UIKit
 
 
-protocol HomeTabBarVCDelegate {
-    func homeTabBarCalled()
-}
+//protocol HomeTabBarVCDelegate {
+//    func homeTabBarCalled()
+//}
 
 class HomeTabBarViewController: UITabBarController {
     
@@ -35,10 +35,8 @@ class HomeTabBarViewController: UITabBarController {
         print("Tab bar: view will apear called")
         
         if isAlreadyLoaded { return }
-        
-        delegate = self
-        configureTabBarItems()
         isAlreadyLoaded = true
+        delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,10 +49,12 @@ class HomeTabBarViewController: UITabBarController {
         
         tabBar.isTranslucent = true
         UITabBar.appearance().barTintColor = UIColor.clear
+        UITabBar.appearance().tintColor = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1.0)
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1)
 
-        let bgImageView = UIImageView(image: UIImage(named: "tabBackground"))
+        let bgImageView = UIImageView(image: getTabBarBGImage())
         bgImageView.frame = tabBar.bounds
         tabBar.addSubview(bgImageView)
         tabBar.sendSubviewToBack(bgImageView)
@@ -62,6 +62,17 @@ class HomeTabBarViewController: UITabBarController {
         tabBar.itemPositioning = .fill
         tabBar.itemSpacing = UIScreen.main.bounds.width/6
     }
+    
+    //Multidevice catalogues
+    func getTabBarBGImage() -> UIImage {
+        let deviceTypeTab = DeviceHandler.isIpad()
+        if deviceTypeTab {
+            return UIImage(named: "tabBarBackground_tab")!
+        }else {
+            return UIImage(named: "tabBackground")!
+        }
+    }
+
     
     private func configureTabBarItems() {
         customTab.tabBarControllerDelegate = self
@@ -77,22 +88,15 @@ class HomeTabBarViewController: UITabBarController {
             ]
         }
         
-//        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1)
-//        tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
         let navHomeVC = UINavigationController(rootViewController: homeVC)
         navHomeVC.isNavigationBarHidden = true
-//        navHomeVC.tabBarItem.image = UIImage(named: "homeTabIcon")
 //        navHomeVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
         var customTabBarItem:UITabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeTabIcon"), selectedImage: UIImage(named: "selectedHomeTabIcon"))
         navHomeVC.tabBarItem = customTabBarItem
-//        navHomeVC.tabBarItem.image = UIImage(named: "selectedHomeTabIcon")
-//        navHomeVC.tabBarItem.title = "Home"
         let selectedColor   = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1.0)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor], for: .selected)
-
         navHomeVC.tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)
         navHomeVC.tabBarItem.image?.withRenderingMode(.alwaysOriginal)
         navHomeVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
@@ -109,9 +113,9 @@ class HomeTabBarViewController: UITabBarController {
         navMyNFTsVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
         
         let createNFTVC = CreateNFTViewController()
-        let navcreateNFTVC = UINavigationController(rootViewController: createNFTVC)
-        navcreateNFTVC.tabBarItem.image = UIImage(named: "createIcon")
-//        navcreateNFTVC.tabBarItem.imageInsets = getCreateButtonIconInsets()
+        let navCreateNFTVC = UINavigationController(rootViewController: createNFTVC)
+//        navCreateNFTVC.tabBarItem.image = UIImage(named: "createIcon")
+        navCreateNFTVC.tabBarItem.imageInsets = getCreateButtonIconInsets()
 //        navcreateNFTVC.isNavigationBarHidden = true
 //        navcreateNFTVC.tabBarItem.title = " "
 //        navcreateNFTVC.tabBarItem.image?.withRenderingMode(.alwaysOriginal)
@@ -125,103 +129,100 @@ class HomeTabBarViewController: UITabBarController {
         //navThirdTabVC.tabBarItem.selectedImage = UIImage(named: "MyLogosTabIconSelected")
 //        navThirdTabVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
         navThirdTabVC.tabBarItem.title = "ThirdTab"
+//        navThirdTabVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
         navThirdTabVC.tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)
         navThirdTabVC.isNavigationBarHidden = true
         navThirdTabVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
         
         let profileVC = Profile()
-        let navProfileVC = UINavigationController(rootViewController: UIViewController())
+        let navProfileVC = UINavigationController(rootViewController: profileVC)
         navProfileVC.tabBarItem.title = "Profile"
         navProfileVC.tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)
         navProfileVC.tabBarItem.image = UIImage(named: "profileTabIcon")
+        
 //        navProfileVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
-        navProfileVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
+        navProfileVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 15)
+        navProfileVC.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: -15)
+//        navProfileVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
         navProfileVC.isNavigationBarHidden = true
         
-        viewControllers = [navHomeVC, navMyNFTsVC, navcreateNFTVC, navThirdTabVC, navProfileVC]
+        viewControllers = [navHomeVC, navMyNFTsVC, navCreateNFTVC, navThirdTabVC, navProfileVC]
         tabBar.isTranslucent = false
         
     }
     
     private func getTabBarItemImageInsets()-> UIEdgeInsets {
-        return UIEdgeInsets(top: -2, left: 0, bottom: -2, right: 0)
+        if (DeviceHandler.isIpad()) {
+            return UIEdgeInsets(top: -2, left: 5, bottom: -2, right: 5)
+        } else if (!DeviceHandler.isNotchedDevice()) {
+            return UIEdgeInsets(top: -2, left: 0, bottom: -2, right: 0)
+        } else {
+            return UIEdgeInsets(top: -2, left: 0, bottom: -2, right: 0)
+        }
+    }
+    
+    private func getTabBarItemTitleInsets()-> UIOffset {
+        return UIOffset(horizontal: 12, vertical: 12)
     }
     
     private func getCreateButtonIconInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        let deviceType = DeviceHandler.getDeviceType()
-//        switch deviceType {
-//        case DeviceModel2XIpad9:
-//            if #available(iOS 11.0, *) {
-//
-//                return UIEdgeInsets(top: -8, left: 10, bottom: 8,  right: -10)
-//            } else {
-//
-//                return UIEdgeInsets(top: 0, left: 0, bottom: 0,  right: 0)
-//            }
-//        case DeviceModel2XIpad10:
-//            if #available(iOS 11.0, *) {
-//
-//
-//                return UIEdgeInsets(top: -10, left: 8, bottom: 10, right: -8)
-//            } else {
-//
-//
-//                return UIEdgeInsets(top: 0, left: 0, bottom: 0,  right: 0)
-//            }
-//        case DeviceModel2XIpad11:
-//            return UIEdgeInsets(top: -8, left: 12, bottom: 8, right: -12)
-//        case DeviceModel2XIpad12:
-//            if #available(iOS 11.0, *) {
-//
-//                return UIEdgeInsets(top: -8, left: 12, bottom: 8, right: -12)
-//            } else {
-//                return UIEdgeInsets(top: 10, left: 0, bottom: -10,  right: 0)
-//            }
-//        default:
-//            return UIEdgeInsets(top: -2, left: 0, bottom: 2, right: 0)
-//        }
+//        return UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        let deviceType = DeviceHandler.getDeviceType()
+        switch deviceType {
+        case .DeviceModel2XIpad9:
+            if #available(iOS 11.0, *) {
+
+                return UIEdgeInsets(top: -8, left: 10, bottom: 8,  right: -10)
+            } else {
+
+                return UIEdgeInsets(top: 0, left: 0, bottom: 0,  right: 0)
+            }
+        case .DeviceModel2XIpad10:
+            if #available(iOS 11.0, *) {
+
+                return UIEdgeInsets(top: -10, left: 8, bottom: 10, right: -8)
+            } else {
+
+                return UIEdgeInsets(top: 0, left: 0, bottom: 0,  right: 0)
+            }
+        case .DeviceModel2XIpad11:
+            return UIEdgeInsets(top: -8, left: 12, bottom: 8, right: -12)
+            
+        case .DeviceModel2XIpad12:
+            if #available(iOS 11.0, *) {
+
+                return UIEdgeInsets(top: -8, left: 12, bottom: 8, right: -12)
+            } else {
+                return UIEdgeInsets(top: 10, left: 0, bottom: -10,  right: 0)
+            }
+        default:
+            return UIEdgeInsets(top: -2, left: 0, bottom: 2, right: 0)
+        }
     }
     
     private func getTextBottomSpace() -> UIOffset {
-        return UIOffset(horizontal: 0, vertical: -3)
-//        let deviceType = DeviceHandler.getDeviceType()
-//        switch deviceType {
-//        case DeviceModel2XIpad9, DeviceModel2XIpad10, DeviceModel2XIpad11, DeviceModel2XIpad12:
-//            if #available(iOS 13.0, *) {
-//                return UIOffset(horizontal: 0, vertical: -4)
-//            } else {
-//                return UIOffset(horizontal: 0, vertical: 0)
-//            }
-//
-//        default:
-//            return UIOffset(horizontal: 0, vertical: 0)
-//        }
+        if (DeviceHandler.isIpad()) {
+            return UIOffset(horizontal: 0, vertical: 5)
+        } else if (!DeviceHandler.isNotchedDevice()) {
+            return UIOffset(horizontal: 0, vertical: -20)
+        } else {
+            return UIOffset(horizontal: 0, vertical: -3)
+        }
     }
 }
 
 extension HomeTabBarViewController : CreateNFTTabBarDelegate {
     func createButtonPressed() {
         print("Create Button Pressed! ")
+        let createNFTVC = CreateNFTViewController()
+        let navCreateNFTVC = UINavigationController(rootViewController: createNFTVC)
+        self.present(navCreateNFTVC, animated: true, completion: nil)
     }
 }
 
 extension HomeTabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        setFirebaseEvent(vc: viewController)
-//        if viewController.className == EditPageViewController.className {
-//            let createCanvasVC = CreateNewViewController()
-//            createCanvasVC.iconList = iconsList
-//            createCanvasVC.designList = localList
-//            let createNavVC = UINavigationController(rootViewController: createCanvasVC)
-//
-//            createNavVC.isNavigationBarHidden = true
-//            createNavVC.modalPresentationStyle = .overFullScreen
-//            present(createNavVC, animated: true, completion: nil)
-//
-//            return false
-//        }
-        
+
         return true
     }
 }

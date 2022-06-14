@@ -39,10 +39,6 @@ class TrendingCollectionViewCell: UICollectionViewCell {
         setFloatingDPFrame()
     }
     
-    func handleConstraints() {
-        
-    }
-    
     private func setFloatingDPFrame() {
         var createButtonFrame = collectionDPImageView.frame
         createButtonFrame.origin.y = 0 - getFlotedPartHeight()

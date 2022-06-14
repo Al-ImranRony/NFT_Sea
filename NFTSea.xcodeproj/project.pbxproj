@@ -17,6 +17,8 @@
 		2D2C3B51284F5E1800F16CF5 /* NewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C3B4F284F5E1800F16CF5 /* NewItemTableViewCell.swift */; };
 		2D2C3B52284F5E1800F16CF5 /* NewItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B50284F5E1800F16CF5 /* NewItemTableViewCell.xib */; };
 		2D2C3B54284F928B00F16CF5 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */; };
+		2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCC2858633300F1F72E /* DeviceHandler.swift */; };
+		2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCD2858633300F1F72E /* DeviceModel.swift */; };
 		2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C17284CA60C00982455 /* AppDelegate.swift */; };
 		2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C19284CA60C00982455 /* SceneDelegate.swift */; };
 		2D972C1F284CA60C00982455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C1D284CA60C00982455 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		2D2C3B4F284F5E1800F16CF5 /* NewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewCell.swift; sourceTree = "<group>"; };
 		2D2C3B50284F5E1800F16CF5 /* NewItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemTableViewCell.xib; sourceTree = "<group>"; };
 		2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		2D698BCC2858633300F1F72E /* DeviceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
+		2D698BCD2858633300F1F72E /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		2D972C14284CA60C00982455 /* NFTSea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTSea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D972C17284CA60C00982455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D972C19284CA60C00982455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,17 +165,19 @@
 			isa = PBXGroup;
 			children = (
 				2D972C2B284CB5EA00982455 /* Pages */,
+				2D698BCC2858633300F1F72E /* DeviceHandler.swift */,
+				2D698BCD2858633300F1F72E /* DeviceModel.swift */,
 				2D972C35284CC09900982455 /* Utilities */,
+				2D972C1D284CA60C00982455 /* Main.storyboard */,
 				2D972C17284CA60C00982455 /* AppDelegate.swift */,
 				2DE5855C2850C5F1009147D8 /* MYNFTsViewController.swift */,
+				2DE585622850CB34009147D8 /* CreateNFTViewController.swift */,
 				2DE5855E2850C836009147D8 /* ThirdTab.swift */,
 				2DE585602850C99C009147D8 /* Profile.swift */,
 				2D972C19284CA60C00982455 /* SceneDelegate.swift */,
-				2D972C1D284CA60C00982455 /* Main.storyboard */,
 				2D972C20284CA60D00982455 /* Assets.xcassets */,
 				2D972C22284CA60D00982455 /* LaunchScreen.storyboard */,
 				2D972C25284CA60D00982455 /* Info.plist */,
-				2DE585622850CB34009147D8 /* CreateNFTViewController.swift */,
 			);
 			path = NFTSea;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */,
 				2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */,
 				2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */,
+				2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */,
 				2D2C3B4D284F5DF700F16CF5 /* NewItemCollectionViewCell.swift in Sources */,
 				2D2C3B48284F5DBE00F16CF5 /* TrendingCollectionViewCell.swift in Sources */,
 				2DAF31A0284E3A4F00FE8C81 /* AssetTableViewCell.swift in Sources */,
@@ -344,6 +351,7 @@
 				2DE5855D2850C5F1009147D8 /* MYNFTsViewController.swift in Sources */,
 				2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
+				2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */,
 				2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import UIKit
 class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+    @IBOutlet weak var seeAllButton: UIButton!
     @IBOutlet weak var newItemCollectionView: UICollectionView!
     
     var newItemModel = [Model]()
@@ -25,6 +26,10 @@ class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         newItemCollectionView.reloadData()
     }
 
+    @IBAction func didPressRightIndicator(_ sender: Any) {
+        print("Recent Items will be shown...")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -49,6 +54,12 @@ class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         collectionCell.configure(with: newItemModel[indexPath.row])
         collectionCell.layer.cornerRadius = 6
         return collectionCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Name :", newItemModel[indexPath.row].itemName)
+        print("Price :", newItemModel[indexPath.row].priceTag)
+        print("Owner :", newItemModel[indexPath.row].categoryName)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {

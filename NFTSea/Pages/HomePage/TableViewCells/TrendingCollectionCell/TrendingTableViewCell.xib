@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-GN-f1u">
-                        <rect key="frame" x="16" y="0.0" width="429" height="40"/>
+                        <rect key="frame" x="16" y="0.0" width="429" height="30"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-hk-mX1">
                                 <rect key="frame" x="0.0" y="0.0" width="133" height="18"/>
@@ -48,41 +48,46 @@
                                     <constraint firstAttribute="height" constant="18" id="PtS-ZD-1sS"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxy-uP-iyW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0in-LA-TNn">
                                 <rect key="frame" x="353" y="0.0" width="60" height="24"/>
-                                <color key="backgroundColor" red="0.16470588235294117" green="0.14117647058823529" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.14117647058823529" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="1KH-EY-lRK"/>
-                                    <constraint firstAttribute="width" constant="60" id="sjU-hM-pxB"/>
+                                    <constraint firstAttribute="width" constant="60" id="cc0-df-v32"/>
+                                    <constraint firstAttribute="height" constant="24" id="eSH-aI-Itr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
-                                <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="See All">
+                                    <fontDescription key="titleFontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                            </label>
+                                <connections>
+                                    <action selector="didPressRightIndicator:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tA7-fw-tfG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SjB-hk-mX1" firstAttribute="leading" secondItem="dqo-GN-f1u" secondAttribute="leading" id="2M1-Wl-8VE"/>
-                            <constraint firstItem="Fxy-uP-iyW" firstAttribute="top" secondItem="dqo-GN-f1u" secondAttribute="top" id="Hdi-Lh-fyM"/>
-                            <constraint firstAttribute="height" constant="40" id="Sa8-Ft-JaN"/>
+                            <constraint firstItem="0in-LA-TNn" firstAttribute="top" secondItem="dqo-GN-f1u" secondAttribute="top" id="L5J-vE-OzF"/>
+                            <constraint firstAttribute="height" constant="30" id="Sa8-Ft-JaN"/>
                             <constraint firstItem="SjB-hk-mX1" firstAttribute="top" secondItem="dqo-GN-f1u" secondAttribute="top" id="TYM-5K-X5O"/>
-                            <constraint firstAttribute="trailing" secondItem="Fxy-uP-iyW" secondAttribute="trailing" constant="16" id="wUy-DB-8Hb"/>
+                            <constraint firstAttribute="trailing" secondItem="0in-LA-TNn" secondAttribute="trailing" constant="16" id="wXR-j9-W7m"/>
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3Hc-OK-YPx">
-                        <rect key="frame" x="16" y="40" width="429" height="202"/>
+                        <rect key="frame" x="0.0" y="30" width="445" height="212"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Won-ZG-zhs">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
@@ -92,13 +97,14 @@
                     <constraint firstItem="3Hc-OK-YPx" firstAttribute="top" secondItem="dqo-GN-f1u" secondAttribute="bottom" id="bBU-YM-UXx"/>
                     <constraint firstAttribute="trailing" secondItem="dqo-GN-f1u" secondAttribute="trailing" id="eHE-mG-gTJ"/>
                     <constraint firstAttribute="trailing" secondItem="3Hc-OK-YPx" secondAttribute="trailing" id="jiZ-gP-5Ga"/>
-                    <constraint firstItem="3Hc-OK-YPx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ulN-TF-6EK"/>
+                    <constraint firstItem="3Hc-OK-YPx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ulN-TF-6EK"/>
                     <constraint firstItem="dqo-GN-f1u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="v6A-eF-uDK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="seeAllButton" destination="0in-LA-TNn" id="2xQ-re-ZWQ"/>
                 <outlet property="trendingCollectionView" destination="3Hc-OK-YPx" id="d20-mj-xen"/>
             </connections>
             <point key="canvasLocation" x="228.2608695652174" y="191.51785714285714"/>

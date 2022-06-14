@@ -55,10 +55,12 @@ class SplashViewController: UIViewController {
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
+        
+        //TODO: try push nav, dismiss splash
         let homeTabBarController = HomeTabBarViewController()
         homeTabBarController.modalPresentationStyle = .fullScreen
         self.present(homeTabBarController, animated: true, completion: nil)
-
+//        self.dismiss(animated: true, completion: nil)
         
 //        if((authenticatedUser) != nil){
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)

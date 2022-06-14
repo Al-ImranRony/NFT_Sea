@@ -56,10 +56,15 @@ class CreateTabBar: UITabBar {
         let middleButtonHeight = middleButtonSize.height
         createButton = UIButton(frame: CGRect(x: 0, y: 0, width: middleButtonWidth, height: middleButtonHeight))
         setCreateButtonFrame()
-        createButton.adjustsImageWhenHighlighted = false
+
         addSubview(createButton)
-        createButton.setImage(UIImage(named: "Floating_Button"), for: .normal)
-        createButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .allTouchEvents)
+        createButton.setImage(getCreateButtonIconImage(), for: .normal)
+        createButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
+        
+        createButton.layer.shadowColor = UIColor(red: 237/255, green: 79/255, blue: 151/255, alpha: 0.15).cgColor
+        createButton.layer.shadowOffset = CGSize(width: 1, height: 5)
+        createButton.layer.shadowOpacity = 3.5
+        createButton.layer.shadowRadius = 5
         layoutIfNeeded()
     }
     
@@ -68,7 +73,14 @@ class CreateTabBar: UITabBar {
     }
     
     private func getCreateButtonSize()-> CGSize {
-        return CGSize(width: 48, height: 48)
+        let deviceTypeTab = DeviceHandler.isIpad()
+        if (deviceTypeTab) {
+            return CGSize(width: 84, height: 84)
+        } else if (!DeviceHandler.isNotchedDevice()) {
+            return CGSize(width: 48, height: 48)
+        } else {
+            return CGSize(width: 44, height: 44)
+        }
     }
     
     private func setCreateButtonFrame() {
@@ -79,7 +91,22 @@ class CreateTabBar: UITabBar {
     }
     
     private func getCreateButtonFlotedPartHeight() ->  CGFloat {
-        return 14
+        if (DeviceHandler.isIpad()) {
+            return 38
+        } else if (!DeviceHandler.isNotchedDevice()) {
+            return 14
+        } else {
+            return 7
+        }
+    }
+    
+    func getCreateButtonIconImage() -> UIImage {
+        let deviceTypeTab = DeviceHandler.isIpad()
+        if deviceTypeTab {
+            return UIImage(named: "Floating_Button_Tab")!
+        }else {
+            return UIImage(named: "Floating_Button")!
+        }
     }
     
 }

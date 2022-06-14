@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol cellDataItemsDelegate {
+    func passCellData()
+}
+
 class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -41,7 +45,8 @@ class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let bottomSpace: CGFloat = 10.0 // Let's assume the space you want is 10
+        //TODO: 50/50 spacing
+        let bottomSpace: CGFloat = 30.0 // Let's assume the space you want is 10
         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom:bottomSpace, right: 0))
      }
     
@@ -58,9 +63,13 @@ class AssetTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         return collectionCell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
-//        return CGSize(width: 100, height: 122)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Name :", tableModel[indexPath.row].itemName)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 130)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
