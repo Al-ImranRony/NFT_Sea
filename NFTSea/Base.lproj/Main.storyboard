@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GMj-mF-2VE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
         <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
@@ -27,7 +31,129 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXj-2I-vuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="-487"/>
+            <point key="canvasLocation" x="396" y="-488"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hQu-bG-d5z">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Unx-Uw-NW0" customClass="LoginViewController" customModule="NFTSea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tSn-Hu-Gq0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A92-Br-ck0">
+                                <rect key="frame" x="162.66666666666666" y="80" width="88.666666666666657" height="38"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYX-ox-S6z">
+                                <rect key="frame" x="82.666666666666671" y="430.33333333333331" width="248.66666666666663" height="35.333333333333314"/>
+                                <string key="text">TO view the profile you need to connect or 
+enter a wallet address</string>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                                <color key="textColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet not initialized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMa-Wc-j7F">
+                                <rect key="frame" x="98.000000000000014" y="372.66666666666669" width="218.33333333333337" height="30.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQR-hF-RHg">
+                                <rect key="frame" x="127" y="495.66666666666674" width="160" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="26w-r4-leG"/>
+                                    <constraint firstAttribute="height" constant="44" id="tNp-yT-Pxg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="connectButton">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didPressConnectButton:" destination="Unx-Uw-NW0" eventType="touchUpInside" id="EoC-4M-Jzb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b4N-Ac-HFA"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.10588235294117647" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VMa-Wc-j7F" firstAttribute="centerX" secondItem="tSn-Hu-Gq0" secondAttribute="centerX" id="2cY-no-rcs"/>
+                            <constraint firstItem="A92-Br-ck0" firstAttribute="centerX" secondItem="tSn-Hu-Gq0" secondAttribute="centerX" id="9SR-UV-7lv"/>
+                            <constraint firstItem="ZYX-ox-S6z" firstAttribute="top" secondItem="VMa-Wc-j7F" secondAttribute="bottom" constant="27.329999999999998" id="Gj3-xF-6Af"/>
+                            <constraint firstItem="ZYX-ox-S6z" firstAttribute="centerY" secondItem="tSn-Hu-Gq0" secondAttribute="centerY" id="Js0-xk-mdj"/>
+                            <constraint firstItem="hQR-hF-RHg" firstAttribute="centerX" secondItem="tSn-Hu-Gq0" secondAttribute="centerX" id="P8l-Vg-pTv"/>
+                            <constraint firstItem="ZYX-ox-S6z" firstAttribute="centerX" secondItem="tSn-Hu-Gq0" secondAttribute="centerX" id="YoB-ol-tWg"/>
+                            <constraint firstItem="hQR-hF-RHg" firstAttribute="top" secondItem="ZYX-ox-S6z" secondAttribute="bottom" constant="30" id="nkf-aF-jYs"/>
+                            <constraint firstItem="A92-Br-ck0" firstAttribute="top" secondItem="b4N-Ac-HFA" secondAttribute="top" constant="36" id="rsw-ar-Wm2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectWalletButton" destination="hQR-hF-RHg" id="XxU-Cf-0it"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OnH-nW-vmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="-1158"/>
+        </scene>
+        <!--Connect Wallet View Controller-->
+        <scene sceneID="la2-US-dgU">
+            <objects>
+                <viewController storyboardIdentifier="connectWalletVC" id="r1H-5X-ctN" customClass="ConnectWalletViewController" customModule="NFTSea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Zv-00-sJS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nftTitleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="088-ZT-ppV">
+                                <rect key="frame" x="183" y="94" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="088-ZT-ppV" secondAttribute="height" id="a03-9c-VQY"/>
+                                    <constraint firstAttribute="width" constant="48" id="cCd-0z-Afr"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rEb-2y-Sic">
+                                <rect key="frame" x="0.0" y="182" width="414" height="540"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="540" id="dzE-d1-DJj"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-rY-lM4">
+                                <rect key="frame" x="47" y="728" width="320" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="boD-ED-KtN"/>
+                                    <constraint firstAttribute="width" constant="320" id="mC7-Mg-ovq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Connect Metamask">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressMetamask:" destination="r1H-5X-ctN" eventType="touchUpInside" id="jha-2m-dC7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VsN-MS-T31"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kkf-rY-lM4" firstAttribute="centerX" secondItem="0Zv-00-sJS" secondAttribute="centerX" id="8ca-R4-zcO"/>
+                            <constraint firstItem="VsN-MS-T31" firstAttribute="trailing" secondItem="rEb-2y-Sic" secondAttribute="trailing" id="9hH-fO-hO8"/>
+                            <constraint firstItem="rEb-2y-Sic" firstAttribute="leading" secondItem="VsN-MS-T31" secondAttribute="leading" id="JaY-kZ-mlw"/>
+                            <constraint firstItem="rEb-2y-Sic" firstAttribute="top" secondItem="088-ZT-ppV" secondAttribute="bottom" constant="40" id="Ntr-rh-wOj"/>
+                            <constraint firstItem="088-ZT-ppV" firstAttribute="centerX" secondItem="0Zv-00-sJS" secondAttribute="centerX" id="UfM-0q-C0H"/>
+                            <constraint firstItem="088-ZT-ppV" firstAttribute="top" secondItem="VsN-MS-T31" secondAttribute="top" constant="50" id="Wf9-q7-Am9"/>
+                            <constraint firstItem="VsN-MS-T31" firstAttribute="bottom" secondItem="Kkf-rY-lM4" secondAttribute="bottom" constant="80" id="wtn-2w-re0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="metamaskButton" destination="Kkf-rY-lM4" id="wBx-E9-67E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcZ-UN-LpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763.7681159420292" y="-1158.4821428571429"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ZaK-BB-y0w">
@@ -44,16 +170,16 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-PF-DOq">
-                                                <rect key="frame" x="167.33333333333334" y="10" width="79.666666666666657" height="20"/>
+                                                <rect key="frame" x="167.66666666666666" y="10" width="78.666666666666657" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xha-HM-HrM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="20"/>
-                                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="20"/>
+                                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flash 2" translatesAutoresizingMaskIntoConstraints="NO" id="WXM-PG-XQ3">
-                                                        <rect key="frame" x="59.666666666666657" y="0.0" width="20" height="20"/>
+                                                        <rect key="frame" x="58.666666666666686" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="dva-3O-RaT"/>
                                                             <constraint firstAttribute="width" secondItem="WXM-PG-XQ3" secondAttribute="height" multiplier="1:1" id="j0l-bM-9Vl"/>
@@ -127,6 +253,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="AoP-rZ-3Ew"/>
                     <navigationItem key="navigationItem" id="Pgb-I2-EGI"/>
                     <connections>
+                        <outlet property="menuButton" destination="KLF-3s-4XD" id="HXN-Dy-RvO"/>
                         <outlet property="searchBar" destination="ikY-hH-KO5" id="r5c-v7-Oxc"/>
                         <outlet property="table" destination="x7z-C1-LiT" id="Brt-ko-geM"/>
                         <outlet property="titleLabel" destination="xha-HM-HrM" id="Nzp-gb-f5Z"/>
@@ -134,12 +261,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8H-m0-2M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="-488"/>
+            <point key="canvasLocation" x="1110" y="-488"/>
         </scene>
     </scenes>
     <resources>
+        <image name="connectButton" width="160" height="44"/>
         <image name="flash 2" width="20" height="20"/>
         <image name="menuIcon" width="24" height="24"/>
+        <image name="nftTitleLogo" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

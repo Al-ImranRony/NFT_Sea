@@ -15,11 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Splash Screen Video
+        //DevModeCode
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let splashVC = storyboard.instantiateViewController(withIdentifier: "splashVC")
-        let navController = UINavigationController(rootViewController: splashVC)
+        let connectWalletVC = storyboard.instantiateViewController(withIdentifier: "connectWalletVC") as! ConnectWalletViewController
+        
+        //Splash Screen Video
+        
+        let splashVC = storyboard.instantiateViewController(withIdentifier: "splashVC") as! SplashViewController
+        
+        let navController = UINavigationController(rootViewController: connectWalletVC)
+        navController.setNavigationBarHidden(true, animated: true)
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
@@ -27,19 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
 
 
 }

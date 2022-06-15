@@ -19,8 +19,9 @@
 		2D2C3B54284F928B00F16CF5 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */; };
 		2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCC2858633300F1F72E /* DeviceHandler.swift */; };
 		2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCD2858633300F1F72E /* DeviceModel.swift */; };
+		2D698BD22858B85C00F1F72E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BD12858B85C00F1F72E /* LoginViewController.swift */; };
+		2D698BD62858B9FA00F1F72E /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BD52858B9FA00F1F72E /* WalletModel.swift */; };
 		2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C17284CA60C00982455 /* AppDelegate.swift */; };
-		2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D972C19284CA60C00982455 /* SceneDelegate.swift */; };
 		2D972C1F284CA60C00982455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C1D284CA60C00982455 /* Main.storyboard */; };
 		2D972C21284CA60D00982455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C20284CA60D00982455 /* Assets.xcassets */; };
 		2D972C24284CA60D00982455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D972C22284CA60D00982455 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		2DE585612850C99C009147D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585602850C99C009147D8 /* Profile.swift */; };
 		2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585622850CB34009147D8 /* CreateNFTViewController.swift */; };
 		2DE585652850CF5F009147D8 /* HomePageTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585642850CF5F009147D8 /* HomePageTabBar.swift */; };
+		2DF6B04A2859D5F4002F48A6 /* ConnectWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +55,10 @@
 		2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		2D698BCC2858633300F1F72E /* DeviceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
 		2D698BCD2858633300F1F72E /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		2D698BD12858B85C00F1F72E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2D698BD52858B9FA00F1F72E /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		2D972C14284CA60C00982455 /* NFTSea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTSea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D972C17284CA60C00982455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D972C19284CA60C00982455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2D972C1E284CA60C00982455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D972C20284CA60D00982455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D972C23284CA60D00982455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		2DE585602850C99C009147D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2DE585622850CB34009147D8 /* CreateNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNFTViewController.swift; sourceTree = "<group>"; };
 		2DE585642850CF5F009147D8 /* HomePageTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTabBar.swift; sourceTree = "<group>"; };
+		2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWalletViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,31 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		2D698BD02858B7B200F1F72E /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				2DF6B0472859CD63002F48A6 /* ConnectWalletPage */,
+				2D698BD12858B85C00F1F72E /* LoginViewController.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		2D698BD32858B9C900F1F72E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D698BD42858B9DC00F1F72E /* WalletModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D698BD42858B9DC00F1F72E /* WalletModels */ = {
+			isa = PBXGroup;
+			children = (
+				2D698BD52858B9FA00F1F72E /* WalletModel.swift */,
+			);
+			path = WalletModels;
+			sourceTree = "<group>";
+		};
 		2D972C0B284CA60C00982455 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +193,7 @@
 		2D972C16284CA60C00982455 /* NFTSea */ = {
 			isa = PBXGroup;
 			children = (
+				2D698BD32858B9C900F1F72E /* Models */,
 				2D972C2B284CB5EA00982455 /* Pages */,
 				2D698BCC2858633300F1F72E /* DeviceHandler.swift */,
 				2D698BCD2858633300F1F72E /* DeviceModel.swift */,
@@ -174,7 +204,6 @@
 				2DE585622850CB34009147D8 /* CreateNFTViewController.swift */,
 				2DE5855E2850C836009147D8 /* ThirdTab.swift */,
 				2DE585602850C99C009147D8 /* Profile.swift */,
-				2D972C19284CA60C00982455 /* SceneDelegate.swift */,
 				2D972C20284CA60D00982455 /* Assets.xcassets */,
 				2D972C22284CA60D00982455 /* LaunchScreen.storyboard */,
 				2D972C25284CA60D00982455 /* Info.plist */,
@@ -185,6 +214,7 @@
 		2D972C2B284CB5EA00982455 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2D698BD02858B7B200F1F72E /* LoginPage */,
 				2D1C255F284CD106009F8ADB /* HomePage */,
 				2D972C2C284CB5F500982455 /* Splash */,
 			);
@@ -252,6 +282,22 @@
 				2DE585642850CF5F009147D8 /* HomePageTabBar.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2DF6B0472859CD63002F48A6 /* ConnectWalletPage */ = {
+			isa = PBXGroup;
+			children = (
+				2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */,
+				2DF6B0482859CD90002F48A6 /* TableViewCells */,
+			);
+			path = ConnectWalletPage;
+			sourceTree = "<group>";
+		};
+		2DF6B0482859CD90002F48A6 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,19 +381,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE585592850BA04009147D8 /* HomeTabBarViewController.swift in Sources */,
+				2D698BD62858B9FA00F1F72E /* WalletModel.swift in Sources */,
 				2DE585652850CF5F009147D8 /* HomePageTabBar.swift in Sources */,
 				2DE585612850C99C009147D8 /* Profile.swift in Sources */,
 				2D972C18284CA60C00982455 /* AppDelegate.swift in Sources */,
 				2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */,
-				2D972C1A284CA60C00982455 /* SceneDelegate.swift in Sources */,
 				2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */,
 				2D2C3B4D284F5DF700F16CF5 /* NewItemCollectionViewCell.swift in Sources */,
+				2D698BD22858B85C00F1F72E /* LoginViewController.swift in Sources */,
 				2D2C3B48284F5DBE00F16CF5 /* TrendingCollectionViewCell.swift in Sources */,
 				2DAF31A0284E3A4F00FE8C81 /* AssetTableViewCell.swift in Sources */,
 				2D2C3B43284F5D7400F16CF5 /* TrendingTableViewCell.swift in Sources */,
 				2DAF31A4284E3A7F00FE8C81 /* AssetCollectionViewCell.swift in Sources */,
 				2D2C3B51284F5E1800F16CF5 /* NewItemTableViewCell.swift in Sources */,
 				2DE5855B2850C186009147D8 /* CreateTabBar.swift in Sources */,
+				2DF6B04A2859D5F4002F48A6 /* ConnectWalletViewController.swift in Sources */,
 				2DE5855D2850C5F1009147D8 /* MYNFTsViewController.swift in Sources */,
 				2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
@@ -505,10 +553,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTSea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,10 +582,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTSea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

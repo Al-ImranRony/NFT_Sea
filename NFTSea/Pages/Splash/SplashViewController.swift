@@ -50,33 +50,23 @@ class SplashViewController: UIViewController {
         }
         alreadySplashShowed = true
         
-//        let authenticatedUser = UserDefaults.standard.string(forKey: "userId")
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
+        let authenticatedUser = UserDefaults.standard.string(forKey: "userId")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         //TODO: try push nav, dismiss splash
-        let homeTabBarController = HomeTabBarViewController()
-        homeTabBarController.modalPresentationStyle = .fullScreen
-        self.present(homeTabBarController, animated: true, completion: nil)
-//        self.dismiss(animated: true, completion: nil)
+
         
-//        if((authenticatedUser) != nil){
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeVC")
-//            let navController =  UINavigationController.init(rootViewController: homeVC)
-//            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-//            appDelegate.window?.rootViewController = navController
-//            appDelegate.window?.makeKeyAndVisible()
-//        }
-//        else{
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "rootVC")
-//            appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-//            appDelegate.window?.rootViewController = vc
-//            appDelegate.window?.makeKeyAndVisible()
-//        }
+        if((authenticatedUser) != nil){
+            
+            let homeTabBarController = HomeTabBarViewController()
+            navigationController?.isNavigationBarHidden = true
+            navigationController?.pushViewController(homeTabBarController, animated: true)
+        }
+        else{
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+            navigationController?.isNavigationBarHidden = true
+            navigationController?.pushViewController(loginVC, animated: true)
+        }
     }
         
     

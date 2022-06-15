@@ -24,6 +24,7 @@ struct Model  {
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -33,6 +34,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuButton.titleLabel?.text = nil
         
         //UI - Search Bar portion
         searchBarSetup()
@@ -72,7 +75,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
 
     public func searchBarSetup() {
         //TODO: font and weight for custom
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.init(rawValue: 700.0))
         
         searchBar.delegate = self
         searchBar.isTranslucent = false
