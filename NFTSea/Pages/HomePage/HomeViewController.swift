@@ -52,22 +52,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         configureModel()
     }
     
-    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-
-//        for subView in searchBar.subviews {
-//            for subSubView in subView.subviews {
-//                if let textField = subSubView as? UITextField {
-//                    var bounds: CGRect
-//                    bounds = textField.bounds
-//                    bounds.size.height = 40
-//                    textField.bounds = bounds
-//                    searchBar.layoutIfNeeded()
-//                    searchBar.layoutSubviews()
-//                }
-//            }
-//        }
+    func configureModel() {
+        assetModel.append(Model(itemName: "asset1", itemImageName: "asset1", categoryName: "Collection1", priceTag: "0.8ETH"))
+        assetModel.append(Model(itemName: "asset2", itemImageName: "asset2", categoryName: "Collection1", priceTag: "0.32987ETH"))
+        assetModel.append(Model(itemName: "asset3", itemImageName: "asset3", categoryName: "Collection1", priceTag: "0.893276ETH"))
+        assetModel.append(Model(itemName: "asset4", itemImageName: "asset4", categoryName: "Collection1", priceTag: "0.92374ETH"))
     }
+
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         print("Menu dekhba ? Wait...")
@@ -109,12 +100,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         return image
     }
     
-    func configureModel() {
-        assetModel.append(Model(itemName: "asset1", itemImageName: "asset1", categoryName: "Collection1", priceTag: "0.8ETH"))
-        assetModel.append(Model(itemName: "asset2", itemImageName: "asset2", categoryName: "Collection1", priceTag: "0.32987ETH"))
-        assetModel.append(Model(itemName: "asset3", itemImageName: "asset3", categoryName: "Collection1", priceTag: "0.893276ETH"))
-        assetModel.append(Model(itemName: "asset4", itemImageName: "asset4", categoryName: "Collection1", priceTag: "0.92374ETH"))
-    }
     
     //TableView ddf functions
     //TODO: accordance to row...
@@ -169,8 +154,5 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         return indexPath
     }
     
-//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
 }
 

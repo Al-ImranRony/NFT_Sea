@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D05514C285AFED000B37BEC /* WalletConnectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D05514A285AFED000B37BEC /* WalletConnectTableViewCell.swift */; };
+		2D05514D285AFED000B37BEC /* WalletConnectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D05514B285AFED000B37BEC /* WalletConnectTableViewCell.xib */; };
+		2D055154285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D055153285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf */; };
+		2D055158285B34F500B37BEC /* DividOrTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D055156285B34F500B37BEC /* DividOrTableViewCell.swift */; };
+		2D055159285B34F500B37BEC /* DividOrTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D055157285B34F500B37BEC /* DividOrTableViewCell.xib */; };
+		2D05515B285B427C00B37BEC /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D05515A285B427C00B37BEC /* Inter-Bold.ttf */; };
+		2D05515D285B684E00B37BEC /* InputModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D05515C285B684E00B37BEC /* InputModalViewController.swift */; };
 		2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C2562284CD28F009F8ADB /* HomeViewController.swift */; };
 		2D2C3B43284F5D7400F16CF5 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C3B41284F5D7400F16CF5 /* TrendingTableViewCell.swift */; };
 		2D2C3B44284F5D7400F16CF5 /* TrendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B42284F5D7400F16CF5 /* TrendingTableViewCell.xib */; };
@@ -40,9 +47,17 @@
 		2DE585632850CB34009147D8 /* CreateNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585622850CB34009147D8 /* CreateNFTViewController.swift */; };
 		2DE585652850CF5F009147D8 /* HomePageTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE585642850CF5F009147D8 /* HomePageTabBar.swift */; };
 		2DF6B04A2859D5F4002F48A6 /* ConnectWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */; };
+		D991A01F5F568E07A80E394F /* Pods_NFTSea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EA69C1AF192D997D127281 /* Pods_NFTSea.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D05514A285AFED000B37BEC /* WalletConnectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnectTableViewCell.swift; sourceTree = "<group>"; };
+		2D05514B285AFED000B37BEC /* WalletConnectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletConnectTableViewCell.xib; sourceTree = "<group>"; };
+		2D055153285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		2D055156285B34F500B37BEC /* DividOrTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividOrTableViewCell.swift; sourceTree = "<group>"; };
+		2D055157285B34F500B37BEC /* DividOrTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DividOrTableViewCell.xib; sourceTree = "<group>"; };
+		2D05515A285B427C00B37BEC /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		2D05515C285B684E00B37BEC /* InputModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModalViewController.swift; sourceTree = "<group>"; };
 		2D1C2562284CD28F009F8ADB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D2C3B41284F5D7400F16CF5 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		2D2C3B42284F5D7400F16CF5 /* TrendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -78,6 +93,9 @@
 		2DE585622850CB34009147D8 /* CreateNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNFTViewController.swift; sourceTree = "<group>"; };
 		2DE585642850CF5F009147D8 /* HomePageTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTabBar.swift; sourceTree = "<group>"; };
 		2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWalletViewController.swift; sourceTree = "<group>"; };
+		33EA69C1AF192D997D127281 /* Pods_NFTSea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTSea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6A5267768D7089668558B2 /* Pods-NFTSea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTSea.release.xcconfig"; path = "Target Support Files/Pods-NFTSea/Pods-NFTSea.release.xcconfig"; sourceTree = "<group>"; };
+		C4468C422861D37D582FD197 /* Pods-NFTSea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTSea.debug.xcconfig"; path = "Target Support Files/Pods-NFTSea/Pods-NFTSea.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +103,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D991A01F5F568E07A80E394F /* Pods_NFTSea.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1996E3C83B9A2165BE2FD2FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4468C422861D37D582FD197 /* Pods-NFTSea.debug.xcconfig */,
+				8B6A5267768D7089668558B2 /* Pods-NFTSea.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2709ECD8AE1FA6A88695214B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33EA69C1AF192D997D127281 /* Pods_NFTSea.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D055149285AFAF800B37BEC /* CWTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2D05514A285AFED000B37BEC /* WalletConnectTableViewCell.swift */,
+				2D05514B285AFED000B37BEC /* WalletConnectTableViewCell.xib */,
+			);
+			path = CWTableViewCells;
+			sourceTree = "<group>";
+		};
+		2D055155285B349F00B37BEC /* DividerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D055156285B34F500B37BEC /* DividOrTableViewCell.swift */,
+				2D055157285B34F500B37BEC /* DividOrTableViewCell.xib */,
+			);
+			path = DividerTableViewCell;
+			sourceTree = "<group>";
+		};
 		2D1C255F284CD106009F8ADB /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +233,8 @@
 			children = (
 				2D972C16284CA60C00982455 /* NFTSea */,
 				2D972C15284CA60C00982455 /* Products */,
+				1996E3C83B9A2165BE2FD2FB /* Pods */,
+				2709ECD8AE1FA6A88695214B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,7 +305,9 @@
 		2DAF3191284DD6CF00FE8C81 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2D05515A285B427C00B37BEC /* Inter-Bold.ttf */,
 				2DAF3192284DD87000FE8C81 /* SourceSansPro-Regular.ttf */,
+				2D055153285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf */,
 				2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */,
 			);
 			path = Fonts;
@@ -289,6 +347,7 @@
 			children = (
 				2DF6B0492859D5F4002F48A6 /* ConnectWalletViewController.swift */,
 				2DF6B0482859CD90002F48A6 /* TableViewCells */,
+				2D05515C285B684E00B37BEC /* InputModalViewController.swift */,
 			);
 			path = ConnectWalletPage;
 			sourceTree = "<group>";
@@ -296,6 +355,8 @@
 		2DF6B0482859CD90002F48A6 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				2D055149285AFAF800B37BEC /* CWTableViewCells */,
+				2D055155285B349F00B37BEC /* DividerTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -307,6 +368,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D972C28284CA60D00982455 /* Build configuration list for PBXNativeTarget "NFTSea" */;
 			buildPhases = (
+				156A129C0E9649AD3ABBECDC /* [CP] Check Pods Manifest.lock */,
 				2D972C10284CA60C00982455 /* Sources */,
 				2D972C11284CA60C00982455 /* Frameworks */,
 				2D972C12284CA60C00982455 /* Resources */,
@@ -360,6 +422,7 @@
 			files = (
 				2D2C3B4E284F5DF700F16CF5 /* NewItemCollectionViewCell.xib in Resources */,
 				2D2C3B44284F5D7400F16CF5 /* TrendingTableViewCell.xib in Resources */,
+				2D05514D285AFED000B37BEC /* WalletConnectTableViewCell.xib in Resources */,
 				2DAF3193284DD89000FE8C81 /* SourceSansPro-Regular.ttf in Resources */,
 				2D2C3B52284F5E1800F16CF5 /* NewItemTableViewCell.xib in Resources */,
 				2D2C3B49284F5DBE00F16CF5 /* TrendingCollectionViewCell.xib in Resources */,
@@ -367,13 +430,41 @@
 				2DAF31A1284E3A4F00FE8C81 /* AssetTableViewCell.xib in Resources */,
 				2D972C24284CA60D00982455 /* LaunchScreen.storyboard in Resources */,
 				2DAF31A5284E3A7F00FE8C81 /* AssetCollectionViewCell.xib in Resources */,
+				2D05515B285B427C00B37BEC /* Inter-Bold.ttf in Resources */,
 				2D972C21284CA60D00982455 /* Assets.xcassets in Resources */,
+				2D055154285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf in Resources */,
+				2D055159285B34F500B37BEC /* DividOrTableViewCell.xib in Resources */,
 				2D972C1F284CA60C00982455 /* Main.storyboard in Resources */,
 				2D2C3B54284F928B00F16CF5 /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		156A129C0E9649AD3ABBECDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NFTSea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D972C10284CA60C00982455 /* Sources */ = {
@@ -389,9 +480,11 @@
 				2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */,
 				2D2C3B4D284F5DF700F16CF5 /* NewItemCollectionViewCell.swift in Sources */,
 				2D698BD22858B85C00F1F72E /* LoginViewController.swift in Sources */,
+				2D055158285B34F500B37BEC /* DividOrTableViewCell.swift in Sources */,
 				2D2C3B48284F5DBE00F16CF5 /* TrendingCollectionViewCell.swift in Sources */,
 				2DAF31A0284E3A4F00FE8C81 /* AssetTableViewCell.swift in Sources */,
 				2D2C3B43284F5D7400F16CF5 /* TrendingTableViewCell.swift in Sources */,
+				2D05515D285B684E00B37BEC /* InputModalViewController.swift in Sources */,
 				2DAF31A4284E3A7F00FE8C81 /* AssetCollectionViewCell.swift in Sources */,
 				2D2C3B51284F5E1800F16CF5 /* NewItemTableViewCell.swift in Sources */,
 				2DE5855B2850C186009147D8 /* CreateTabBar.swift in Sources */,
@@ -400,6 +493,7 @@
 				2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
 				2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */,
+				2D05514C285AFED000B37BEC /* WalletConnectTableViewCell.swift in Sources */,
 				2D1C2563284CD28F009F8ADB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +638,7 @@
 		};
 		2D972C29284CA60D00982455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4468C422861D37D582FD197 /* Pods-NFTSea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -573,6 +668,7 @@
 		};
 		2D972C2A284CA60D00982455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B6A5267768D7089668558B2 /* Pods-NFTSea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

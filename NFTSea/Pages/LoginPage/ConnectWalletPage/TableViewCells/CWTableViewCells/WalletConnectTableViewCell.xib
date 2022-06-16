@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WalletConnectTableViewCell" rowHeight="84" id="KGk-i7-Jjw" customClass="WalletConnectTableViewCell" customModule="NFTSea" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="456" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxy-n8-yqu">
+                        <rect key="frame" x="68" y="0.0" width="320" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-wa-mVs">
+                                <rect key="frame" x="14" y="17" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bia-wa-mVs" secondAttribute="height" id="Wb1-eQ-bVt"/>
+                                    <constraint firstAttribute="width" constant="30" id="gXf-wu-iHg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-xP-8bd">
+                                <rect key="frame" x="160" y="32" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hmq-xP-8bd" firstAttribute="centerX" secondItem="hxy-n8-yqu" secondAttribute="centerX" id="0ZN-TV-lr2"/>
+                            <constraint firstItem="hmq-xP-8bd" firstAttribute="centerY" secondItem="hxy-n8-yqu" secondAttribute="centerY" id="CGw-Ox-i2h"/>
+                            <constraint firstItem="Bia-wa-mVs" firstAttribute="leading" secondItem="hxy-n8-yqu" secondAttribute="leading" constant="14" id="Jmr-hy-WvJ"/>
+                            <constraint firstAttribute="width" constant="320" id="anP-A6-bxe"/>
+                            <constraint firstItem="Bia-wa-mVs" firstAttribute="centerY" secondItem="hxy-n8-yqu" secondAttribute="centerY" id="ywM-tZ-D7e"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="27"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-rm-ACU">
+                        <rect key="frame" x="68" y="0.0" width="320" height="64"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="320" id="jJD-bu-ENu"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="didPressCWButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xMm-cK-hAS"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hxy-n8-yqu" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Gu3-pK-gXC"/>
+                    <constraint firstItem="Zk1-rm-ACU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PcN-rl-poE"/>
+                    <constraint firstItem="Zk1-rm-ACU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gLH-Ne-04b"/>
+                    <constraint firstAttribute="bottom" secondItem="hxy-n8-yqu" secondAttribute="bottom" constant="20" id="kqf-dr-Atl"/>
+                    <constraint firstItem="hxy-n8-yqu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tfb-6h-7Qw"/>
+                    <constraint firstAttribute="bottom" secondItem="Zk1-rm-ACU" secondAttribute="bottom" constant="20" id="vRF-4p-EOB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="walletConnectButton" destination="Zk1-rm-ACU" id="QJL-6e-RzT"/>
+                <outlet property="wcButtonImageView" destination="Bia-wa-mVs" id="rqA-dV-OlM"/>
+                <outlet property="wcButtonLabel" destination="hmq-xP-8bd" id="r16-sW-6AQ"/>
+            </connections>
+            <point key="canvasLocation" x="236.23188405797103" y="153.34821428571428"/>
+        </tableViewCell>
+    </objects>
+</document>
