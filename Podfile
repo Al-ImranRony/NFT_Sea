@@ -6,5 +6,10 @@ target 'NFTSea' do
   use_frameworks!
 
   # Pods for NFTSea
+  
+  pod 'web3swift'
+
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage' 
 
 end

@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+
+
+public let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+public let firestore = Firestore.firestore()
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        FirebaseApp.configure()
+        
         //DevModeCode
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let connectWalletVC = storyboard.instantiateViewController(withIdentifier: "connectWalletVC") as! ConnectWalletViewController
+        let connectWalletVC = storyBoard.instantiateViewController(withIdentifier: "connectWalletVC") as! ConnectWalletViewController
         
         //Splash Screen Video
         
-        let splashVC = storyboard.instantiateViewController(withIdentifier: "splashVC") as! SplashViewController
+        let splashVC = storyBoard.instantiateViewController(withIdentifier: "splashVC") as! SplashViewController
         
         let navController = UINavigationController(rootViewController: connectWalletVC)
         navController.setNavigationBarHidden(true, animated: true)

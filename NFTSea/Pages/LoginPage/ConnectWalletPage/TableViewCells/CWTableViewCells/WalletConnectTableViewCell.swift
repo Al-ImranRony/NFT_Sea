@@ -40,14 +40,13 @@ class WalletConnectTableViewCell: UITableViewCell {
     func setupButton () {
         walletConnectButton.layer.cornerRadius = 27
         walletConnectButton.setTitle("", for: .normal)
-        walletConnectButton.layer.borderWidth = 1
+        walletConnectButton.layer.borderWidth = 0.5
         walletConnectButton.layer.borderColor = UIColor.white.cgColor
         walletConnectButton.layer.cornerRadius = 27
         self.selectionStyle = .none
     }
     
     @IBAction func didPressCWButton(_ sender: Any) {
-        print("Button pressed...")
         inputModalDelegate?.showInputViewOnPress()
     }
 }

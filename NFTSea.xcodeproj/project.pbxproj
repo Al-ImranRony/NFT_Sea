@@ -24,6 +24,10 @@
 		2D2C3B51284F5E1800F16CF5 /* NewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C3B4F284F5E1800F16CF5 /* NewItemTableViewCell.swift */; };
 		2D2C3B52284F5E1800F16CF5 /* NewItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B50284F5E1800F16CF5 /* NewItemTableViewCell.xib */; };
 		2D2C3B54284F928B00F16CF5 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */; };
+		2D2E4A65285EF2200093CE15 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E4A64285EF2200093CE15 /* Inter-SemiBold.ttf */; };
+		2D2E4A6C285F41160093CE15 /* WalletInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E4A6B285F41160093CE15 /* WalletInit.swift */; };
+		2D2E4A6E285F4F9B0093CE15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E4A6D285F4F9B0093CE15 /* GoogleService-Info.plist */; };
+		2D2E4A71285F5E560093CE15 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E4A70285F5E560093CE15 /* ProfileViewController.swift */; };
 		2D698BCE2858633300F1F72E /* DeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCC2858633300F1F72E /* DeviceHandler.swift */; };
 		2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BCD2858633300F1F72E /* DeviceModel.swift */; };
 		2D698BD22858B85C00F1F72E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698BD12858B85C00F1F72E /* LoginViewController.swift */; };
@@ -68,6 +72,10 @@
 		2D2C3B4F284F5E1800F16CF5 /* NewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewCell.swift; sourceTree = "<group>"; };
 		2D2C3B50284F5E1800F16CF5 /* NewItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemTableViewCell.xib; sourceTree = "<group>"; };
 		2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		2D2E4A64285EF2200093CE15 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		2D2E4A6B285F41160093CE15 /* WalletInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInit.swift; sourceTree = "<group>"; };
+		2D2E4A6D285F4F9B0093CE15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D2E4A70285F5E560093CE15 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D698BCC2858633300F1F72E /* DeviceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
 		2D698BCD2858633300F1F72E /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		2D698BD12858B85C00F1F72E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +211,40 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		2D2E4A66285F370E0093CE15 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2D2E4A6A285F40A50093CE15 /* WalletInit */,
+				2D2E4A67285F37210093CE15 /* MultiDevice */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2D2E4A67285F37210093CE15 /* MultiDevice */ = {
+			isa = PBXGroup;
+			children = (
+				2D698BCC2858633300F1F72E /* DeviceHandler.swift */,
+				2D698BCD2858633300F1F72E /* DeviceModel.swift */,
+			);
+			path = MultiDevice;
+			sourceTree = "<group>";
+		};
+		2D2E4A6A285F40A50093CE15 /* WalletInit */ = {
+			isa = PBXGroup;
+			children = (
+				2D2E4A6B285F41160093CE15 /* WalletInit.swift */,
+			);
+			path = WalletInit;
+			sourceTree = "<group>";
+		};
+		2D2E4A6F285F5E330093CE15 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				2D2E4A70285F5E560093CE15 /* ProfileViewController.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
 		2D698BD02858B7B200F1F72E /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,10 +291,9 @@
 		2D972C16284CA60C00982455 /* NFTSea */ = {
 			isa = PBXGroup;
 			children = (
+				2D2E4A66285F370E0093CE15 /* Modules */,
 				2D698BD32858B9C900F1F72E /* Models */,
 				2D972C2B284CB5EA00982455 /* Pages */,
-				2D698BCC2858633300F1F72E /* DeviceHandler.swift */,
-				2D698BCD2858633300F1F72E /* DeviceModel.swift */,
 				2D972C35284CC09900982455 /* Utilities */,
 				2D972C1D284CA60C00982455 /* Main.storyboard */,
 				2D972C17284CA60C00982455 /* AppDelegate.swift */,
@@ -263,6 +304,7 @@
 				2D972C20284CA60D00982455 /* Assets.xcassets */,
 				2D972C22284CA60D00982455 /* LaunchScreen.storyboard */,
 				2D972C25284CA60D00982455 /* Info.plist */,
+				2D2E4A6D285F4F9B0093CE15 /* GoogleService-Info.plist */,
 			);
 			path = NFTSea;
 			sourceTree = "<group>";
@@ -270,6 +312,7 @@
 		2D972C2B284CB5EA00982455 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2D2E4A6F285F5E330093CE15 /* ProfilePage */,
 				2D698BD02858B7B200F1F72E /* LoginPage */,
 				2D1C255F284CD106009F8ADB /* HomePage */,
 				2D972C2C284CB5F500982455 /* Splash */,
@@ -306,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				2D05515A285B427C00B37BEC /* Inter-Bold.ttf */,
+				2D2E4A64285EF2200093CE15 /* Inter-SemiBold.ttf */,
 				2DAF3192284DD87000FE8C81 /* SourceSansPro-Regular.ttf */,
 				2D055153285B33AE00B37BEC /* SourceSansPro-SemiBold.ttf */,
 				2D2C3B53284F928B00F16CF5 /* SourceSansPro-Bold.ttf */,
@@ -372,6 +416,7 @@
 				2D972C10284CA60C00982455 /* Sources */,
 				2D972C11284CA60C00982455 /* Frameworks */,
 				2D972C12284CA60C00982455 /* Resources */,
+				59398E9AAFB573D3893D0640 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,9 +465,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2E4A65285EF2200093CE15 /* Inter-SemiBold.ttf in Resources */,
 				2D2C3B4E284F5DF700F16CF5 /* NewItemCollectionViewCell.xib in Resources */,
 				2D2C3B44284F5D7400F16CF5 /* TrendingTableViewCell.xib in Resources */,
 				2D05514D285AFED000B37BEC /* WalletConnectTableViewCell.xib in Resources */,
+				2D2E4A6E285F4F9B0093CE15 /* GoogleService-Info.plist in Resources */,
 				2DAF3193284DD89000FE8C81 /* SourceSansPro-Regular.ttf in Resources */,
 				2D2C3B52284F5E1800F16CF5 /* NewItemTableViewCell.xib in Resources */,
 				2D2C3B49284F5DBE00F16CF5 /* TrendingCollectionViewCell.xib in Resources */,
@@ -464,6 +511,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		59398E9AAFB573D3893D0640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NFTSea/Pods-NFTSea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NFTSea/Pods-NFTSea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NFTSea/Pods-NFTSea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -481,6 +545,7 @@
 				2D2C3B4D284F5DF700F16CF5 /* NewItemCollectionViewCell.swift in Sources */,
 				2D698BD22858B85C00F1F72E /* LoginViewController.swift in Sources */,
 				2D055158285B34F500B37BEC /* DividOrTableViewCell.swift in Sources */,
+				2D2E4A71285F5E560093CE15 /* ProfileViewController.swift in Sources */,
 				2D2C3B48284F5DBE00F16CF5 /* TrendingCollectionViewCell.swift in Sources */,
 				2DAF31A0284E3A4F00FE8C81 /* AssetTableViewCell.swift in Sources */,
 				2D2C3B43284F5D7400F16CF5 /* TrendingTableViewCell.swift in Sources */,
@@ -491,6 +556,7 @@
 				2DF6B04A2859D5F4002F48A6 /* ConnectWalletViewController.swift in Sources */,
 				2DE5855D2850C5F1009147D8 /* MYNFTsViewController.swift in Sources */,
 				2DE5855F2850C836009147D8 /* ThirdTab.swift in Sources */,
+				2D2E4A6C285F41160093CE15 /* WalletInit.swift in Sources */,
 				2D972C2E284CB60A00982455 /* SplashViewController.swift in Sources */,
 				2D698BCF2858633300F1F72E /* DeviceModel.swift in Sources */,
 				2D05514C285AFED000B37BEC /* WalletConnectTableViewCell.swift in Sources */,
