@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 class InputModalViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var importButton: UIButton!
-    @IBOutlet weak var secondTextView: UITextView!
-    @IBOutlet weak var firstTextView: UITextView!
+    @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var dismissButton: UIButton!
     
     var placeholderLabel : UILabel!
@@ -24,10 +25,9 @@ class InputModalViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         setupSegmentedControl()
-        setupFirstTextView()
+        setupTextView()
         
-        firstTextView.delegate = self
-        secondTextView.delegate = self
+        inputTextView.delegate = self
         
         importButton.layer.cornerRadius = 20
     }
@@ -37,34 +37,27 @@ class InputModalViewController: UIViewController, UITextViewDelegate {
         segControl.setTitle("Private Key", forSegmentAt: 1)
     }
     
-    private func setupFirstTextView () {
-        secondTextView.isHidden = true
-        
-        firstTextView.isHidden = false
-        firstTextView.backgroundColor = UIColor(red: 145/255, green: 150/255, blue: 190/255, alpha: 1.0)
-        firstTextView.layer.cornerRadius = 5
-        firstTextView.text = "12 word recovery phrase"
-        firstTextView.textColor = .lightGray
+    private func setupTextView () {
+        inputTextView.isHidden = false
+        inputTextView.backgroundColor = UIColor(red: 145/255, green: 150/255, blue: 190/255, alpha: 1.0)
+        inputTextView.layer.cornerRadius = 5
+        inputTextView.textColor = .lightGray
+        if (inputTextView.text.isEmpty) {
+            inputTextView.text = "12 word recovery phrase"
+        }
     }
-    private func setupSecondTextView() {
-        firstTextView.isHidden = true
-        firstTextView.text = nil
-        
-        secondTextView.isHidden = false
-        secondTextView.backgroundColor = UIColor(red: 145/255, green: 150/255, blue: 190/255, alpha: 1.0)
-        secondTextView.layer.cornerRadius = 5
-        secondTextView.text = "64 alphanumeric characters"
-        secondTextView.textColor = .lightGray
-    }
+    
     
     
     @IBAction func didChangeSegment(_ sender: Any) {
         switch segControl.selectedSegmentIndex {
         case 0:
-            setupFirstTextView()
+            setupTextView()
+            inputTextView.text = "12 word recovery phrase"
             break
         case 1:
-            setupSecondTextView()
+            setupTextView()
+            inputTextView.text = "64 alphanumeric characters"
             break
         default:
             break
@@ -80,8 +73,15 @@ class InputModalViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            print("textview is empty")
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            secretKey = inputTextView.text!
+            break
+        case 1:
+            privateKey = inputTextView.text!
+            break
+        default:
+            break
         }
     }
     
@@ -96,9 +96,6 @@ class InputModalViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func didPressImportWallet(_ sender: Any) {
         
-        secretKey = firstTextView.text!
-        privateKey = secondTextView.text!
-        
         guard (secretKey != "" || privateKey != "") else {
             showAlert(title: "Signin alert", message: "Forget to fill your secret key")
             return
@@ -110,20 +107,23 @@ class InputModalViewController: UIViewController, UITextViewDelegate {
     }
     
     func navigateWithFirebase() {
-        let docRef = firestore.collection("users").document(currentUser.uid)
+        let docRef = firestore.collection("users").document(currentUser.uid!)
+        let fireStorage = 
+        
         docRef.getDocument { responses, error in
-            if ((responses?.exists) != nil){
+            if ((responses?.exists) != false){
                 let profileVC = storyBoard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
-                self.navigationController?.isNavigationBarHidden = true
-//                self.present(profileVC, animated: true, completion: nil)
-                self.navigationController!.pushViewController(profileVC, animated: true)
+                let navController = UINavigationController(rootViewController: profileVC)
+                navController.modalPresentationStyle = .fullScreen
+                self.present(navController, animated: true, completion: nil)
                 
             } else {
-                docRef.setData(["email": currentUser.email, "name": currentUser.userName, "uid": currentUser.uid])
-
-                let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
-                self.navigationController?.isNavigationBarHidden = true
-                self.navigationController?.pushViewController(loginVC, animated: true)
+                docRef.setData(["email": currentUser.email, "name": currentUser.userName, "user_DP": currentUser.userDP, "uid": currentUser.uid])
+                
+                let profileVC = storyBoard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
+                let navController = UINavigationController(rootViewController: profileVC)
+                navController.modalPresentationStyle = .fullScreen
+                self.present(navController, animated: true, completion: nil)
             }
         }
     }

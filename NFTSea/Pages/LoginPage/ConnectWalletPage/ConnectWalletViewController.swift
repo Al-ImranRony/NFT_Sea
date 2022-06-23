@@ -95,8 +95,9 @@ extension ConnectWalletViewController: InputModalDelegate {
         print("Button pressed...")
 
         let inputModalVC = storyBoard.instantiateViewController(withIdentifier: "InputModalViewController") as! InputModalViewController
+        navigationController?.isNavigationBarHidden = true
         inputModalVC.modalPresentationStyle = .overCurrentContext
-        self.present(inputModalVC, animated: true, completion: nil)
+        navigationController?.present(inputModalVC, animated: true, completion: nil)
     }
     
     

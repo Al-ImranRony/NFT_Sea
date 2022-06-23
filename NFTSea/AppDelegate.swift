@@ -26,12 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //DevModeCode
         
         let connectWalletVC = storyBoard.instantiateViewController(withIdentifier: "connectWalletVC") as! ConnectWalletViewController
-        
+        let profileVC = storyBoard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
+
         //Splash Screen Video
         
         let splashVC = storyBoard.instantiateViewController(withIdentifier: "splashVC") as! SplashViewController
         
-        let navController = UINavigationController(rootViewController: connectWalletVC)
+        let navController = UINavigationController(rootViewController: profileVC)
         navController.setNavigationBarHidden(true, animated: true)
 
         self.window = UIWindow(frame: UIScreen.main.bounds)

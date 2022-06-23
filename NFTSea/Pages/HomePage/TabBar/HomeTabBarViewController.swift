@@ -32,7 +32,7 @@ class HomeTabBarViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("Tab bar: view will apear called")
+        print("Tab bar: view will appear called")
         
         if isAlreadyLoaded { return }
         isAlreadyLoaded = true
@@ -89,8 +89,7 @@ class HomeTabBarViewController: UITabBarController {
         }
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "home")
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: "home")
         let navHomeVC = UINavigationController(rootViewController: homeVC)
         navHomeVC.isNavigationBarHidden = true
 //        navHomeVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
@@ -134,7 +133,7 @@ class HomeTabBarViewController: UITabBarController {
         navThirdTabVC.isNavigationBarHidden = true
         navThirdTabVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
         
-        let profileVC = Profile()
+        let profileVC = storyBoard.instantiateViewController(withIdentifier: "profileVC")
         let navProfileVC = UINavigationController(rootViewController: profileVC)
         navProfileVC.tabBarItem.title = "Profile"
         navProfileVC.tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)

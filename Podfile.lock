@@ -363,6 +363,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
+  - FirebaseDatabase (8.15.0):
+    - FirebaseCore (~> 8.0)
+    - leveldb-library (~> 1.22)
   - FirebaseFirestore (8.13.0):
     - abseil/algorithm (= 0.20200225.0)
     - abseil/base (= 0.20200225.0)
@@ -418,6 +421,7 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - Pageboy (3.6.2)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -430,6 +434,8 @@ PODS:
   - PromisesObjC (2.0.0)
   - secp256k1.c (0.1.2)
   - Starscream (4.0.4)
+  - Tabman (2.12.0):
+    - Pageboy (~> 3.6.0)
   - web3swift (2.5.0):
     - BigInt (~> 5.2.0)
     - CryptoSwift (~> 1.4.2)
@@ -440,6 +446,8 @@ PODS:
 DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseDatabase
+  - Tabman (~> 2.12)
   - web3swift
 
 SPEC REPOS:
@@ -451,6 +459,7 @@ SPEC REPOS:
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseStorage
     - GoogleDataTransport
@@ -460,10 +469,12 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Pageboy
     - PromiseKit
     - PromisesObjC
     - secp256k1.c
     - Starscream
+    - Tabman
     - web3swift
 
 SPEC CHECKSUMS:
@@ -474,6 +485,7 @@ SPEC CHECKSUMS:
   Firebase: ee9b1d9b1801371e29f5591eda89eb5a314ab599
   FirebaseCore: c7e3fa30492e50ccdeef280bf0d5584af38da3e1
   FirebaseCoreDiagnostics: c2836d254a8f0bbb4121ff18f2c2ea39d118fd08
+  FirebaseDatabase: f567afd233e54a303d84423207736590a6feb419
   FirebaseFirestore: 11d872a1e6f745f5ab52b96a218c60bfc6cbd770
   FirebaseStorage: 0f115042c1596f5df5a80b67cf414d8f028ccddd
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
@@ -483,12 +495,14 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  Tabman: 447a50447ed2869c39ab3b1a779327e43e067c4e
   web3swift: 31ecb7a7da543f851344cdd64badea94c439b0d9
 
-PODFILE CHECKSUM: f5d54c6d3edda4bbbd2b3b4ba391edc1c0ad7685
+PODFILE CHECKSUM: 7bd69b586dcfa0a66ded753494fb1d7328e8df1a
 
 COCOAPODS: 1.11.2

@@ -21,11 +21,12 @@ enum WalletType: Equatable {
 }
 
 public struct User {
-    var uid: String
-    var userName: String
-    var email: String
+    var uid: String?
+    var userName: String?
+    var email: String?
+    var userDP: UIImage?
 }
-public var currentUser = User(uid: "", userName: "", email: "")
+public var currentUser = User(uid: "", userName: "", email: "", userDP: UIImage(named: ""))
 
 let defaultData = [Any]()
 public var currentUserWallet = Web3UserWallet(address: "", data: defaultData as? Data, name: "", type: .hd(mnemonics: ""))
@@ -58,7 +59,7 @@ public func createNewWallet(name: String, email: String) {
     currentUser.userName = walletUserName
     currentUser.email = email
     
-    setUserDefaults(userId: currentUser.uid, password: password, secretKey: mnemonics, privateKey: privateKey)
+    setUserDefaults(userId: currentUser.uid!, password: password, secretKey: mnemonics, privateKey: privateKey)
 }
 
 public func importExistingWallet(name: String, email: String, mnemonics: String, pKey: String) {
@@ -85,7 +86,7 @@ public func importExistingWallet(name: String, email: String, mnemonics: String,
         currentUser.userName = walletUserName
         currentUser.email = email
         
-        setUserDefaults(userId: currentUser.uid, password: password, secretKey: mnemonics, privateKey: privateKey)
+        setUserDefaults(userId: currentUser.uid!, password: password, secretKey: mnemonics, privateKey: privateKey)
     }else {
         let formattedKey = pKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let dataKey = Data.fromHex(formattedKey)!
@@ -99,7 +100,7 @@ public func importExistingWallet(name: String, email: String, mnemonics: String,
         currentUser.userName = walletUserName
         currentUser.email = email
         
-        setUserDefaults(userId: currentUser.uid, password: password, secretKey: mnemonics, privateKey: formattedKey)
+        setUserDefaults(userId: currentUser.uid!, password: password, secretKey: mnemonics, privateKey: formattedKey)
     }
 }
 
@@ -109,6 +110,5 @@ public func setUserDefaults(userId: String, password: String, secretKey: String,
     defaults.set(password , forKey: "password")
     defaults.set(secretKey, forKey: "secretKey")
     defaults.set(privateKey, forKey: "privateKey")
-    
 }
 

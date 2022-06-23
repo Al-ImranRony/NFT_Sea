@@ -9,7 +9,10 @@ target 'NFTSea' do
   
   pod 'web3swift'
 
+  pod 'Tabman', '~> 2.12'
+
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage' 
+  pod 'FirebaseDatabase' 
 
 end

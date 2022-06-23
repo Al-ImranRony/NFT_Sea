@@ -49,10 +49,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         table.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
         
-        configureModel()
+        modelInit()
     }
     
-    func configureModel() {
+    func modelInit() {
         assetModel.append(Model(itemName: "asset1", itemImageName: "asset1", categoryName: "Collection1", priceTag: "0.8ETH"))
         assetModel.append(Model(itemName: "asset2", itemImageName: "asset2", categoryName: "Collection1", priceTag: "0.32987ETH"))
         assetModel.append(Model(itemName: "asset3", itemImageName: "asset3", categoryName: "Collection1", priceTag: "0.893276ETH"))

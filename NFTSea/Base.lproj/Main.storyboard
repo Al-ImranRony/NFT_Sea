@@ -278,9 +278,8 @@ enter a wallet address</string>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="mSo-mx-4OC" id="fHF-XN-odD"/>
-                        <outlet property="firstTextView" destination="bOD-tS-D4e" id="nuE-fp-wX5"/>
                         <outlet property="importButton" destination="rP7-YV-8dD" id="O98-wb-Xsu"/>
-                        <outlet property="secondTextView" destination="bOD-tS-D4e" id="TiO-1K-u37"/>
+                        <outlet property="inputTextView" destination="bOD-tS-D4e" id="sPt-Rn-7fJ"/>
                         <outlet property="segControl" destination="2nE-TP-Hh2" id="WWO-j8-9hP"/>
                     </connections>
                 </viewController>
@@ -295,9 +294,63 @@ enter a wallet address</string>
                     <view key="view" contentMode="scaleToFill" id="DX1-X5-qF7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4H-D3-mcN">
+                                <rect key="frame" x="207" y="258" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA3-pH-rWd">
+                                <rect key="frame" x="107" y="268" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="RfD-6p-Zua"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressPubKeyButton:" destination="D1l-Bu-qo2" eventType="touchUpInside" id="mvb-bV-SUp"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-PY-F0s">
+                                <rect key="frame" x="0.0" y="441" width="414" height="455"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="455" id="2TJ-b7-Jnv"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="jCp-fJ-HSd" kind="embed" id="ucc-4i-mTd"/>
+                                </connections>
+                            </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileCoverPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="0de-BQ-AXf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Dpc-pR-vKt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WyH-ij-3W7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.10588235294117647" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="J4H-D3-mcN" firstAttribute="top" secondItem="0de-BQ-AXf" secondAttribute="bottom" constant="64" id="1ar-5t-sea"/>
+                            <constraint firstItem="0de-BQ-AXf" firstAttribute="top" secondItem="WyH-ij-3W7" secondAttribute="top" id="6BK-Ip-F5g"/>
+                            <constraint firstItem="VA3-pH-rWd" firstAttribute="centerX" secondItem="DX1-X5-qF7" secondAttribute="centerX" id="NL7-Jz-E5r"/>
+                            <constraint firstItem="0de-BQ-AXf" firstAttribute="leading" secondItem="WyH-ij-3W7" secondAttribute="leading" id="Y8Z-kh-Zde"/>
+                            <constraint firstItem="WyH-ij-3W7" firstAttribute="trailing" secondItem="0de-BQ-AXf" secondAttribute="trailing" id="oBm-eR-uSA"/>
+                            <constraint firstItem="fHn-PY-F0s" firstAttribute="leading" secondItem="WyH-ij-3W7" secondAttribute="leading" id="ooT-bc-jAg"/>
+                            <constraint firstItem="VA3-pH-rWd" firstAttribute="top" secondItem="J4H-D3-mcN" secondAttribute="bottom" constant="10" id="tbB-ID-G4j"/>
+                            <constraint firstItem="J4H-D3-mcN" firstAttribute="centerX" secondItem="DX1-X5-qF7" secondAttribute="centerX" id="vgE-Vd-caH"/>
+                            <constraint firstAttribute="bottom" secondItem="fHn-PY-F0s" secondAttribute="bottom" id="wPH-aE-2Uq"/>
+                            <constraint firstItem="WyH-ij-3W7" firstAttribute="trailing" secondItem="fHn-PY-F0s" secondAttribute="trailing" id="xih-da-ODD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pagerViewHeightConstraint" destination="2TJ-b7-Jnv" id="xAS-vK-9FM"/>
+                        <outlet property="profileNameLabel" destination="J4H-D3-mcN" id="BSu-pW-pE7"/>
+                        <outlet property="publicAddressButton" destination="VA3-pH-rWd" id="KjI-9G-ZZ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAs-Mf-oh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -411,6 +464,21 @@ enter a wallet address</string>
             </objects>
             <point key="canvasLocation" x="1109" y="-488"/>
         </scene>
+        <!--Pager View Controller-->
+        <scene sceneID="OOp-Qq-Lfd">
+            <objects>
+                <viewController id="jCp-fJ-HSd" customClass="PagerViewController" customModule="NFTSea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y9x-FR-NKm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OTz-Jd-gzc"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJO-fh-IlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3918.8405797101454" y="-1010.15625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="connectButton" width="160" height="44"/>
@@ -418,6 +486,7 @@ enter a wallet address</string>
         <image name="formeticLogo" width="30" height="30"/>
         <image name="menuIcon" width="24" height="24"/>
         <image name="nftTitleLogo" width="48" height="48"/>
+        <image name="profileCoverPhoto" width="414" height="151"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
