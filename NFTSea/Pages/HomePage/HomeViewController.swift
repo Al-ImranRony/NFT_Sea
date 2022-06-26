@@ -47,6 +47,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         table.dataSource = self
         table.delegate =  self
         
+        table.separatorStyle = .none
         table.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
         
         modelInit()

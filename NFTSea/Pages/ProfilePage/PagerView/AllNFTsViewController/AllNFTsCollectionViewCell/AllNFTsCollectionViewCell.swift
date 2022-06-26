@@ -26,11 +26,11 @@ class AllNFTsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configureMyNFTs(with model: ImportedNFTModel) {
-        let image = UIImage(named: model.itemImageName)
+    func configureMyNFTs(with model: Tokens) {
+        let image = UIImage(named: model.hash)
         nftImageView.image = image
         nftImageView.layer.cornerRadius = 10
-        nftNameLabel.text = model.itemName
+        nftNameLabel.text = model.tokenID
         nftNameLabel.textColor = .white
     }
 

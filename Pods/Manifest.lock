@@ -434,6 +434,7 @@ PODS:
   - PromisesObjC (2.0.0)
   - secp256k1.c (0.1.2)
   - Starscream (4.0.4)
+  - SwiftyJSON (4.3.0)
   - Tabman (2.12.0):
     - Pageboy (~> 3.6.0)
   - web3swift (2.5.0):
@@ -447,6 +448,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseDatabase
+  - SwiftyJSON (~> 4.0)
   - Tabman (~> 2.12)
   - web3swift
 
@@ -474,6 +476,7 @@ SPEC REPOS:
     - PromisesObjC
     - secp256k1.c
     - Starscream
+    - SwiftyJSON
     - Tabman
     - web3swift
 
@@ -500,9 +503,10 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Tabman: 447a50447ed2869c39ab3b1a779327e43e067c4e
   web3swift: 31ecb7a7da543f851344cdd64badea94c439b0d9
 
-PODFILE CHECKSUM: 7bd69b586dcfa0a66ded753494fb1d7328e8df1a
+PODFILE CHECKSUM: de11582a6486ee9b5c09ded534894ffef710cb1b
 
 COCOAPODS: 1.11.2

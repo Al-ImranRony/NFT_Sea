@@ -8,7 +8,7 @@
 import UIKit
 
 
-class TokenModel {
+class TokenModel: Codable {
     var tokenName: String
     var tokenSymbol: String
     var tokenID: Int

@@ -27,6 +27,7 @@ class ConnectWalletViewController: UIViewController, UITableViewDelegate, UITabl
         cwTableView.register(DividOrTableViewCell.nib(), forCellReuseIdentifier: DividOrTableViewCell.identifier)
         cwTableView.delegate = self
         cwTableView.dataSource = self
+        
         self.cwTableView.separatorStyle = .none
     }
     
