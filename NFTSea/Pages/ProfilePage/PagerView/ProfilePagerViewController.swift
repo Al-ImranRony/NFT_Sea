@@ -28,21 +28,20 @@ class PagerViewController: TabmanViewController{
     
     func setupPageBar() {
         let pageBar = TMBar.ButtonBar()
+        pageBar.indicator.weight = .light
+        pageBar.layout.contentInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
+        pageBar.buttons.customize { button in
+            button.tintColor = UIColor(red: 183/255, green: 181/255, blue: 181/255, alpha: 1.0)
+            button.selectedTintColor = .white
+        }
         let systemBar = pageBar.systemBar()
         systemBar.backgroundStyle = .clear
-        pageBar.indicator.weight = .medium
-        pageBar.layout.contentInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
         addBar(systemBar, dataSource: self, at:.top)
     }
-    
-    func setupPageBarButton() {
-        
-    }
-    
 }
 
 extension PagerViewController: PageboyViewControllerDataSource, TMBarDataSource {
-    
+  
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return 3
     }

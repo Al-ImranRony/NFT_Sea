@@ -86,17 +86,11 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
         allNFTsCollectionView.register(AllNFTsCollectionViewCell.nib(), forCellWithReuseIdentifier: AllNFTsCollectionViewCell.identifier)
         allNFTsCollectionView.delegate = self
         allNFTsCollectionView.dataSource = self
-        
-        myNFTsModelInit()
     }
     
     func loadCurrentUserTokens(tokenParams: arguments) {
         getTokenMetaData(param: tokenParams)
         getTokenImageFromOpensea(param: tokenParams)
-        allNFTsCollectionView.reloadData()
-//        DispatchQueue.main.async {
-//            allNFTsCollectionView.reloadData()
-//        }
     }
     
     func getTokenMetaData(param: arguments) -> Void {
@@ -127,7 +121,9 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
                         assets.append(tokenDetails(tokenName: "", tokenContractName: tokens[index].tokenName, tokenID: tokens[index].tokenID, tokenImageURL: ""))
 //                        print(assets)
                     }
-        
+                    DispatchQueue.main.async {
+                        allNFTsCollectionView.reloadData()
+                    }
 //                    print(tokens)
                 } catch {
                     print(error.localizedDescription)
@@ -138,7 +134,7 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getTokenImageFromOpensea(param: arguments) {
-        let apiUrl = "https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=\(param.contractAddress)&order_direction=asc&limit=20/"
+        let apiUrl = "https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=\(param.contractAddress)&order_direction=asc&offset=0&limit=20"
         let url = URL(string: apiUrl)
         
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { [self](data, response, error) in
@@ -155,9 +151,18 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
             if let data = data {
                 do {
                     let tokenResponse = try? JSON(data: data)
-                    let tokenImageURL = tokenResponse!["assets"]
-        
-                    print(tokenImageURL)
+                    let assetData = tokenResponse!["assets"]
+                    if let assetsArray = assetData.array {
+                        tokens = assetsArray.map({Tokens(json: $0)})
+                        print("opensea: ", assetsArray.count)
+                        for index in (0...assetsArray.count-1) {
+//                            print("array \(index):  \(assetsArray[index]["name"])")
+                            assets.append(tokenDetails(tokenName: assetsArray[index]["name"].stringValue, tokenContractName: "", tokenID: assetsArray[index]["token_id"].stringValue, tokenImageURL: assetsArray[index]["image_thumbnail_url"].stringValue))
+                        }
+                        DispatchQueue.main.async {
+                            allNFTsCollectionView.reloadData()
+                        }
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -166,33 +171,35 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
         task.resume()
     }
     
-    func myNFTsModelInit() {
-        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset1", itemName: "MyNFTs1"))
-        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset2", itemName: "MyNFTs2"))
-        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset3", itemName: "MyNFTs3"))
-    }
+//    func myNFTsModelInit() {
+//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset1", itemName: "MyNFTs1"))
+//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset2", itemName: "MyNFTs2"))
+//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset3", itemName: "MyNFTs3"))
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 150)
+        return CGSize(width: 165, height: 175)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
+    }
 }
 
 extension AllNFTsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tokens.count
+        return assets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllNFTsCollectionViewCell.identifier, for: indexPath) as! AllNFTsCollectionViewCell
-        cell.configureMyNFTs(with: tokens[indexPath.item])
+        cell.configureMyNFTs(with: assets[indexPath.item])
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 30.0
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10.0
+//    }
 
 }
 

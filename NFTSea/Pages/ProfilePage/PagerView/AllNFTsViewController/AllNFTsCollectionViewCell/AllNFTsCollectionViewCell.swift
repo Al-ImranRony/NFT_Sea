@@ -26,11 +26,18 @@ class AllNFTsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configureMyNFTs(with model: Tokens) {
-        let image = UIImage(named: model.hash)
-        nftImageView.image = image
+    func configureMyNFTs(with model: tokenDetails) {
+        let imageUrl = URL(string: model.tokenImageURL)
+        if (imageUrl != nil) {
+            let imageData = try? Data(contentsOf: imageUrl!)
+            DispatchQueue.main.async { [self] in
+                nftImageView.image = UIImage(data: imageData!)
+            }
+        } else {
+            print("Error loading image")
+        }
         nftImageView.layer.cornerRadius = 10
-        nftNameLabel.text = model.tokenID
+        nftNameLabel.text = "\(model.tokenContractName) #\(model.tokenID)"
         nftNameLabel.textColor = .white
     }
 

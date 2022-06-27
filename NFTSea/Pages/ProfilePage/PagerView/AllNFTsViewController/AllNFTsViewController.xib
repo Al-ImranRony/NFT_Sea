@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllNFTsViewController" customModule="NFTSea" customModuleProvider="target">
             <connections>
-                <outlet property="allNFTsCollectionView" destination="xA8-Hp-ib3" id="v6q-En-oN3"/>
+                <outlet property="allNFTsCollectionView" destination="xA8-Hp-ib3" id="giY-gS-zco"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
