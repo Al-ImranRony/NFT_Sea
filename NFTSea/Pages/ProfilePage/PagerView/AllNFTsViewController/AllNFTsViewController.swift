@@ -171,12 +171,6 @@ class AllNFTsViewController: UIViewController, UICollectionViewDelegate, UIColle
         task.resume()
     }
     
-//    func myNFTsModelInit() {
-//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset1", itemName: "MyNFTs1"))
-//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset2", itemName: "MyNFTs2"))
-//        myNFTsModel.append(ImportedNFTModel(itemImageName: "asset3", itemName: "MyNFTs3"))
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 165, height: 175)
     }

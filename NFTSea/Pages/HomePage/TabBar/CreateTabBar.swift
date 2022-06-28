@@ -14,7 +14,7 @@ protocol CreateNFTTabBarDelegate {
 
 class CreateTabBar: UITabBar {
     
-    private var shapeLayer: CALayer?
+//    private var shapeLayer: CALayer?
     //        private let centerHeight: CGFloat = 22
     //        private let gapValue: CGFloat = 42
     private var createButton = UIButton()
@@ -23,6 +23,7 @@ class CreateTabBar: UITabBar {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCreateButton()
+        self.backgroundColor = .clear
     }
     
     override init(frame: CGRect) {

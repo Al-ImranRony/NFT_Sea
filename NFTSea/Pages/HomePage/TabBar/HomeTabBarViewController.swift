@@ -48,10 +48,16 @@ class HomeTabBarViewController: UITabBarController {
         tabBar.frame.origin.y = view.frame.height - tabBar.frame.size.height
         
         tabBar.isTranslucent = true
+        
+        
         UITabBar.appearance().barTintColor = UIColor.clear
         UITabBar.appearance().tintColor = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1.0)
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
+
+        let barBackground = UITabBarAppearance()
+        barBackground.backgroundEffect = .none
+        barBackground.shadowColor = .clear
+        tabBar.standardAppearance = barBackground
+        
 //        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 122/255, green: 54/255, blue: 247/255, alpha: 1)
 
         let bgImageView = UIImageView(image: getTabBarBGImage())
@@ -87,7 +93,7 @@ class HomeTabBarViewController: UITabBarController {
                 NSAttributedString.Key.paragraphStyle : paragraphStyle,
             ]
         }
-        
+        customTab.backgroundColor = .clear
         
         let homeVC = storyBoard.instantiateViewController(withIdentifier: "home")
         let navHomeVC = UINavigationController(rootViewController: homeVC)
@@ -138,15 +144,13 @@ class HomeTabBarViewController: UITabBarController {
         navProfileVC.tabBarItem.title = "Profile"
         navProfileVC.tabBarItem.setTitleTextAttributes(textAttributes, for: .normal)
         navProfileVC.tabBarItem.image = UIImage(named: "profileTabIcon")
-        
-//        navProfileVC.tabBarItem.imageInsets = getTabBarItemImageInsets()
         navProfileVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 15)
         navProfileVC.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: -15)
 //        navProfileVC.tabBarItem.titlePositionAdjustment = getTextBottomSpace()
         navProfileVC.isNavigationBarHidden = true
         
         viewControllers = [navHomeVC, navMyNFTsVC, navCreateNFTVC, navThirdTabVC, navProfileVC]
-        tabBar.isTranslucent = false
+//        tabBar.isTranslucent = false
         
     }
     

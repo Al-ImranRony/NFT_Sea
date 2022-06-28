@@ -24,7 +24,7 @@ class TrendingTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     func configure(with model: [Model]) {
         self.trendingCollectionModel = model
         trendingCollectionView.reloadData()
-//        seeAllButton.titleLabel?.font = UIFont(name: "SourceSansPro-Regular", size: 12)
+        seeAllButton.titleLabel?.font = UIFont(name: "SourceSansPro-Regular", size: 12)
     }
     
     

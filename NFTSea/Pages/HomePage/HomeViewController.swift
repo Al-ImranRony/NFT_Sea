@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import SwiftyJSON
+import CoreMedia
 
 struct Model  {
     let itemName: String
@@ -22,7 +23,7 @@ struct Model  {
     }
 }
 
-class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UISearchBarDelegate{
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,7 +31,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     @IBOutlet var table: UITableView!
     var assetModel = [Model]()
-    
+//    var hotCollectionsAPI = APIHandler(apiURL: "")
+    var hotCollections: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         table.backgroundColor = UIColor(red: 31/255, green: 27/255, blue: 49/255, alpha: 1.0)
         
         modelInit()
+        getRequestOnAPI()
+        getHotCollectionsImageFromOpensea()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        table.reloadData()
     }
     
     func modelInit() {
@@ -92,17 +101,90 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        var rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
         UIRectFill(rect)
-        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return image
     }
     
+    func getRequestOnAPI() {
+        let apiUrl = "https://top-nft-collections-and-sales.p.rapidapi.com/collections/30d?rapidapi-key=05fb8988e2msh67a2a9f248dfa1bp16e54bjsn316775b01d85"
+        let url = URL(string: apiUrl)
+        
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { [self](data, response, error) in
+            if let error = error {
+                print("Error with fetching films: \(error)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("Error ! Status: \(response)")
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let jsonData = try? JSON(data: data)
+                    let jsonArray = jsonData?.arrayValue
+                    
+                    for index in (0...jsonArray!.count-1) {
+                        hotCollections.append(jsonArray![index]["collection_name"].stringValue)
+                    }
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        })
+        task.resume()
+    }
     
-    //TableView ddf functions
+    func getHotCollectionsImageFromOpensea() {
+        let collectionName = "okay-boys"
+        let apiUrl = "https://testnets-api.opensea.io/api/v1/collection/\(collectionName)"
+        let url = URL(string: apiUrl)
+        
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: { [self](data, response, error) in
+            if let error = error {
+                print("Error with fetching films: \(error)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("Error ! Status: \(response)")
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let tokenResponse = try? JSON(data: data)
+                    let assetData = tokenResponse!["collection"]["image_url"]
+                    print(assetData)
+//                    if let assetsArray = assetData.array {
+//                        tokens = assetsArray.map({Tokens(json: $0)})
+//                        print("opensea: ", assetsArray.count)
+//                        for index in (0...assetsArray.count-1) {
+////                            print("array \(index):  \(assetsArray[index]["name"])")
+//                            assets.append(tokenDetails(tokenName: assetsArray[index]["name"].stringValue, tokenContractName: "", tokenID: assetsArray[index]["token_id"].stringValue, tokenImageURL: assetsArray[index]["image_thumbnail_url"].stringValue))
+//                        }
+//                        DispatchQueue.main.async {
+//                            allNFTsCollectionView.reloadData()
+//                        }
+//                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        })
+        task.resume()
+    }
+    
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     //TODO: accordance to row...
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -154,6 +236,4 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         }
         return indexPath
     }
-    
 }
-

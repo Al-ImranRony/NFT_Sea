@@ -24,6 +24,7 @@ class NewItemTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     func configure(with model: [Model]) {
         self.newItemModel = model
         newItemCollectionView.reloadData()
+        seeAllButton.titleLabel?.font = UIFont(name: "SourceSansPro-Regular", size: 12)
     }
 
     @IBAction func didPressRightIndicator(_ sender: Any) {
