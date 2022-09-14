@@ -167,7 +167,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate{
 //                        tokens = assetsArray.map({Tokens(json: $0)})
 //                        print("opensea: ", assetsArray.count)
 //                        for index in (0...assetsArray.count-1) {
-////                            print("array \(index):  \(assetsArray[index]["name"])")
+//                            print("array \(index):  \(assetsArray[index]["name"])")
 //                            assets.append(tokenDetails(tokenName: assetsArray[index]["name"].stringValue, tokenContractName: "", tokenID: assetsArray[index]["token_id"].stringValue, tokenImageURL: assetsArray[index]["image_thumbnail_url"].stringValue))
 //                        }
 //                        DispatchQueue.main.async {
